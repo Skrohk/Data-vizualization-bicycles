@@ -19,9 +19,6 @@ const barChart = (
    * (example : [[1, 2, 3]] or [[1, 2, 3], [1, 2, 3]].
    * A maximum of 5 barplot can be ploted.
    */
-  if (datasets.length) {
-    console.log('Second call with data loaded');
-  }
 
   const container = d3.select(`#${containerId}`);
   const xPadding = 40;
