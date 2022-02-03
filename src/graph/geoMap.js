@@ -7,14 +7,19 @@ import dataStation from '../../public/data/velib-emplacement-des-stations.json';
 const geoMap = (containerId, datasets, width = 1100, height = 700) => {
   const map = L.map(`${containerId}`, { zoomControl: false }).setView([48.86, 2.37], 13);
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw', {
-    attribution: 'Bike the way &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/light-v10',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw',
-  }).addTo(map);
+  L.tileLayer(
+    'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw',
+    {
+      attribution:
+        'Bike the way &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/light-v10',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken:
+        'pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw',
+    },
+  ).addTo(map);
 
   map.addControl(L.control.zoom({ position: 'bottomleft' }));
 
@@ -32,7 +37,8 @@ const geoMap = (containerId, datasets, width = 1100, height = 700) => {
     name: localisation.fields.nom_compteur,
   }));
 
-  const Tooltip = d3.select(`#${containerId}`)
+  const Tooltip = d3
+    .select(`#${containerId}`)
     .append('div')
     .attr('class', 'tooltip')
     .style('opacity', 1)
@@ -50,8 +56,7 @@ const geoMap = (containerId, datasets, width = 1100, height = 700) => {
 
   const mousemove = (e, d) => {
     console.log(map.latLngToLayerPoint([d.lat, d.long]).x + 20);
-    Tooltip
-      .html(d.name)
+    Tooltip.html(d.name)
       .style('left', `${map.latLngToLayerPoint([d.lat, d.long]).x}px`)
       .style('top', `${map.latLngToLayerPoint([d.lat, d.long]).y}px`);
   };
