@@ -4,8 +4,6 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import * as d3 from 'd3';
-import { averageByContinent } from '@/graph/barChart';
 
 @Options({
   props: {
@@ -15,7 +13,12 @@ import { averageByContinent } from '@/graph/barChart';
   },
 })
 export default class Graph<T> extends Vue {
-  renderGraph!: (containerId: string, graphData: any, x?: number, y?: number) => Promise<void>;
+  renderGraph!: (
+    containerId: string,
+    graphData: any,
+    x?: number,
+    y?: number,
+  ) => Promise<void>;
 
   graphData: any;
 
@@ -29,7 +32,12 @@ export default class Graph<T> extends Vue {
 
   async mounted(): Promise<void> {
     if (this.isFullscreen) {
-      await this.renderGraph(this.containerId, this.graphData, this.sizeX, this.sizeY);
+      await this.renderGraph(
+        this.containerId,
+        this.graphData,
+        this.sizeX,
+        this.sizeY,
+      );
     } else {
       await this.renderGraph(this.containerId, this.graphData);
     }
@@ -37,7 +45,12 @@ export default class Graph<T> extends Vue {
 
   async updated(): Promise<void> {
     if (this.isFullscreen) {
-      await this.renderGraph(this.containerId, this.graphData, this.sizeX, this.sizeY);
+      await this.renderGraph(
+        this.containerId,
+        this.graphData,
+        this.sizeX,
+        this.sizeY,
+      );
     } else {
       await this.renderGraph(this.containerId, this.graphData);
     }

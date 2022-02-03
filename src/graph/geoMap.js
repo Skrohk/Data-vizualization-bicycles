@@ -64,7 +64,7 @@ const geoMap = (containerId, datasets, width = 1100, height = 700) => {
       [width, height],
     ])
     .on('zoom', (event) => {
-      console.log(event);
+      // console.log(event);
       zoomed(event.transform);
     });
 

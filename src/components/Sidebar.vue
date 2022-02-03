@@ -29,6 +29,12 @@
       <div>
         <h2>Informations</h2>
         <h3>Note de cyclabilité de l'arrondissement</h3>
+        <graph
+          :renderGraph="renderPieChart"
+          :graphData="graphData"
+          :is-fullscreen="false"
+          class="my-4"
+        />
         <h3>Compteur</h3>
         <h3>Futures informations à venir</h3>
       </div>
@@ -40,14 +46,45 @@
 </template>
 
 <script lang="ts">
-import { Vue } from 'vue-class-component';
+import { Options, Vue } from 'vue-class-component';
+import PieChart from '@/graph/piechart';
+import Graph from './Graph.vue';
 
-export default class Home extends Vue {
+@Options({
+  components: {
+    Graph,
+  },
+})
+export default class Sidebar extends Vue {
   isOpen = true;
 
   close(): void {
     this.isOpen = !this.isOpen;
   }
+
+  renderPieChart = (containerId: string, data: any) => {
+    console.log('In renderPieCHart');
+    PieChart(containerId, data, { donutLabel: 'Total : 14', height: 500 });
+  };
+
+  graphData = [
+    {
+      name: 'Stations vélib',
+      value: 12,
+    },
+    {
+      name: 'Problèmes rapportés',
+      value: 5,
+    },
+    {
+      name: 'Accidents',
+      value: 10,
+    },
+    {
+      name: 'Pistes cyclables',
+      value: 15,
+    },
+  ];
 }
 </script>
 
