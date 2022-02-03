@@ -9,7 +9,7 @@ const lineChart = (
   xLabel = '',
   yLabel = '',
   title = '',
-  width = 600,
+  width = 700,
   height = 300,
 ) => {
   /**
@@ -23,7 +23,7 @@ const lineChart = (
   const xPadding = 50;
   const yPadding = 50;
 
-  const legendWidth = 150;
+  const legendWidth = 100;
 
   const xScale = d3
     .scaleTime()
@@ -88,12 +88,12 @@ const lineChart = (
     .attr('y', height - yPadding / 3)
     .text(xLabel);
 
-  svg
-    .append('text')
-    .attr('text-anchor', 'middle')
-    .attr('x', width / 2)
-    .attr('y', yPadding / 2)
-    .text(title);
+  // svg
+  //   .append('text')
+  //   .attr('text-anchor', 'middle')
+  //   .attr('x', width / 2)
+  //   .attr('y', yPadding / 2)
+  //   .text(title);
 
   datasets.forEach((dataset, index) => {
     svg
@@ -111,6 +111,19 @@ const lineChart = (
       .attr('y', yPadding + index * 20 + 5)
       .text(legend[index]);
   });
+};
+
+const getAverage = (data: [number, number][]) =>
+  // eslint-disable-next-line
+  data.reduce((acc, val) => acc + val[1], 0) / data.length;
+
+export const computeMovingAverage = (data: [number, number][], period: number) => {
+  const movingAverages = [];
+
+  for (let x = 0; x + period - 1 < data.length; x += period) {
+    movingAverages.push([data[x][0], getAverage(data.slice(x, x + period))]);
+  }
+  return movingAverages;
 };
 
 export default lineChart;

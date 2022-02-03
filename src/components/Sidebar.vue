@@ -33,14 +33,14 @@
           :renderGraph="renderPieChart"
           :graphData="pieChartData"
           :is-fullscreen="false"
-          class="my-4"
+          class="my-2"
         />
         <h3>Compteur</h3>
         <graph
           :renderGraph="renderLineChart"
           :graphData="lineChartData"
           :is-fullscreen="false"
-          class="my-4"
+          class="my-2"
         />
         <h3>Futures informations à venir</h3>
       </div>
@@ -54,7 +54,7 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import PieChart from '@/graph/piechart';
-import lineChart from '@/graph/lineChart';
+import lineChart, { computeMovingAverage } from '@/graph/lineChart';
 import * as d3 from 'd3';
 import Graph from './Graph.vue';
 
@@ -106,29 +106,29 @@ export default class Sidebar extends Vue {
     );
   };
 
-  lineChartData = [
-    [
-      [new Date('2022-01-01'), 8],
-      [new Date('2022-01-02'), 5],
-      [new Date('2022-01-03'), 6],
-      [new Date('2022-01-04'), 18],
-      [new Date('2022-01-05'), 15],
-      [new Date('2022-01-06'), 16],
-    ],
-    [
-      [new Date('2022-01-01'), 18],
-      [new Date('2022-01-02'), 15],
-      [new Date('2022-01-03'), 16],
-      [new Date('2022-01-04'), 28],
-      [new Date('2022-01-05'), 25],
-      [new Date('2022-01-06'), 26],
-    ],
-    [
-      [new Date('2022-01-01'), 28],
-      [new Date('2022-01-02'), 25],
-      [new Date('2022-01-03'), 26],
-    ],
-  ];
+  async created(): Promise<void> {
+    // eslint-disable-next-line
+    const jsonFile = require('../../public/data/100006300-SC_parsed.json');
+
+    jsonFile.data.sort((d1: { d: string }, d2: { d: string }) => {
+      const date1 = new Date(`${d1.d}:00`);
+      const date2 = new Date(`${d2.d}:00`);
+      if (date1 > date2) return -1;
+      if (date2 > date1) return 1;
+      return 0;
+    });
+    this.lineChartData.push(
+      computeMovingAverage(
+        jsonFile.data.map((d: { d: string; s: number }) => [
+          new Date(`${d.d}:00`),
+          d.s,
+        ]),
+        20,
+      ),
+    );
+  }
+
+  lineChartData: any[] = [];
 }
 </script>
 
@@ -158,7 +158,7 @@ export default class Sidebar extends Vue {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 12%;
+  /* margin-left: 12%; */
 }
 h2 {
   font-family: 'Zen Kurenaido', sans-serif;
