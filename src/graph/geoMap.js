@@ -1,75 +1,100 @@
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 import * as d3 from 'd3';
-import * as d3Tile from 'd3-tile';
-
-d3.tile = d3Tile.tile;
-d3.tileWrap = d3Tile.tileWrap;
-
-const deltas = [-100, -4, -1, 0];
-const showLayers = false;
-const url = (x, y, z) => `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
+import dataCounter from '../../public/data/comptage-velo-compteurs.json';
+import dataStation from '../../public/data/velib-emplacement-des-stations.json';
 
 const geoMap = (containerId, datasets, width = 1100, height = 700) => {
-  const container = d3.select(`#${containerId}`);
-  const svg = container
-    .selectAll('svg')
-    // We want only one svg element and not more
-    .data([1])
-    .enter()
-    .append('svg')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('viewBox', `0 0 ${width} ${height}`);
+  const map = L.map(`${containerId}`, { zoomControl: false }).setView([48.86, 2.37], 13);
 
-  const levels = svg
-    .append('g')
-    .attr('pointer-events', 'none')
-    .selectAll('g')
-    .data(deltas)
-    .join('g')
-    .style('opacity', showLayers ? 0.3 : null);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw', {
+    attribution: 'Bike the way &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/light-v10',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw',
+  }).addTo(map);
 
-  const tile = d3
-    .tile()
-    .extent([
-      [0, 0],
-      [width, height],
-    ])
-    .tileSize(512)
-    .clampX(false);
+  map.addControl(L.control.zoom({ position: 'bottomleft' }));
 
-  function zoomed(transform) {
-    levels.each(function (delta) {
-      const tiles = tile.zoomDelta(delta)(transform);
+  L.svg({ clickable: true }).addTo(map);
 
-      d3.select(this)
-        .selectAll('image')
-        .data(tiles, (d) => d)
-        .join('image')
-        .attr('xlink:href', (d) => url(...d3.tileWrap(d)))
-        .attr('x', ([x]) => (x + tiles.translate[0]) * tiles.scale)
-        .attr('y', ([, y]) => (y + tiles.translate[1]) * tiles.scale)
-        .attr('width', tiles.scale)
-        .attr('height', tiles.scale);
-    });
+  const stations = dataStation.map((localisation) => ({
+    long: localisation.fields.coordonnees_geo[1],
+    lat: localisation.fields.coordonnees_geo[0],
+    name: localisation.fields.name,
+  }));
+
+  const counters = dataCounter.map((localisation) => ({
+    long: localisation.fields.coordinates[1],
+    lat: localisation.fields.coordinates[0],
+    name: localisation.fields.nom_compteur,
+  }));
+
+  const Tooltip = d3.select(`#${containerId}`)
+    .append('div')
+    .attr('class', 'tooltip')
+    .style('opacity', 1)
+    .style('background-color', 'white')
+    .style('border', 'solid')
+    .style('border-width', '2px')
+    .style('border-radius', '5px')
+    .style('padding', '5px')
+    .style('position', 'fixed')
+    .style('z-index', 2000);
+
+  const mouseover = () => {
+    Tooltip.style('opacity', 1);
+  };
+
+  const mousemove = (e, d) => {
+    console.log(map.latLngToLayerPoint([d.lat, d.long]).x + 20);
+    Tooltip
+      .html(d.name)
+      .style('left', `${map.latLngToLayerPoint([d.lat, d.long]).x}px`)
+      .style('top', `${map.latLngToLayerPoint([d.lat, d.long]).y}px`);
+  };
+
+  const mouseleave = () => {
+    Tooltip.style('opacity', 0);
+  };
+
+  d3.select(`#${containerId}`)
+    .select('svg')
+    .selectAll('myCircles')
+    .data(stations)
+    .join('circle')
+    .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
+    .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
+    .attr('r', 4)
+    .style('fill', '#2a9d8f')
+    .on('mouseover', mouseover)
+    .on('mousemove', mousemove)
+    .on('mouseleave', mouseleave)
+    .style('pointer-events', 'auto');
+
+  d3.select(`#${containerId}`)
+    .select('svg')
+    .selectAll('myCircles')
+    .data(counters)
+    .join('circle')
+    .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
+    .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
+    .attr('r', 4)
+    .style('fill', '#e76f51')
+    .on('mouseover', mouseover)
+    .on('mousemove', mousemove)
+    .on('mouseleave', mouseleave)
+    .style('pointer-events', 'auto');
+
+  function update() {
+    d3.selectAll('circle')
+      .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
+      .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y);
   }
-  // eslint-disable-next-line
-  const transform = d3.zoomIdentity.translate(width >> 1, height >> 1).scale(1 << 12);
 
-  const zoom = d3
-    .zoom()
-    // eslint-disable-next-line
-    .scaleExtent([1 << 8, 1 << 22])
-    .extent([
-      [0, 0],
-      [width, height],
-    ])
-    .on('zoom', (event) => {
-      console.log(event);
-      zoomed(event.transform);
-    });
-
-  svg.call(zoom).call(zoom.transform, transform);
-  // zoomed()
+  map.on('moveend', update);
 };
 
 export default geoMap;

@@ -112,7 +112,7 @@ export default class Home extends Vue {
 }
 #header {
   position: fixed;
-  z-index: 10;
+  z-index: 1000;
   top: 10px;
   left: 10px;
   display: flex;

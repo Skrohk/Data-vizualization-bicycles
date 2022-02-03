@@ -1,0 +1,2534 @@
+[
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "41bd2eefbb990a6f032ad2a519719695c21273a1",
+    "fields": {
+      "installation_date": "2012-02-13",
+      "name": "105 rue La Fayette E-O",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100003097/https:",
+      "id": "100003097",
+      "coordinates": [
+        48.87773,
+        2.3506
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "105 rue La Fayette E-O",
+      "counter": "Y2H21100756",
+      "id_compteur": "100003097-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.3506,
+        48.87773
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "30517b4a1b367e21dd218c004668d5451676f6c3",
+    "fields": {
+      "installation_date": "2017-07-12",
+      "name": "39 quai Fran\u00e7ois Mauriac",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100036718/https:",
+      "id": "100036718",
+      "coordinates": [
+        48.83436,
+        2.377
+      ],
+      "channel_id": "103036718",
+      "channel_name": "SE-NO",
+      "nom_compteur": "39 quai Fran\u00e7ois Mauriac SE-NO",
+      "counter": "Y2H17021629",
+      "id_compteur": "100036718-103036718"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.377,
+        48.83436
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "f0f0a0def5ff5a0753674cbb844026c30607b9a8",
+    "fields": {
+      "installation_date": "2017-07-12",
+      "name": "39 quai Fran\u00e7ois Mauriac",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100036718/https:",
+      "id": "100036718",
+      "coordinates": [
+        48.83436,
+        2.377
+      ],
+      "channel_id": "104036718",
+      "channel_name": "NO-SE",
+      "nom_compteur": "39 quai Fran\u00e7ois Mauriac NO-SE",
+      "counter": "Y2H17021629",
+      "id_compteur": "100036718-104036718"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.377,
+        48.83436
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "68d4a1edb8fc3c7c2ee3d78a471521ec9f4db884",
+    "fields": {
+      "installation_date": "2018-11-28",
+      "name": "6 rue Julia Bartet",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047547/https:",
+      "id": "100047547",
+      "coordinates": [
+        48.82636,
+        2.30303
+      ],
+      "channel_id": "104047547",
+      "channel_name": "NE-SO",
+      "nom_compteur": "6 rue Julia Bartet NE-SO",
+      "counter": "Y2H18086323",
+      "id_compteur": "100047547-104047547"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.30303,
+        48.82636
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "0fd1130f9a929e38ace09b0927fc505b378bbcb0",
+    "fields": {
+      "installation_date": "2019-12-10",
+      "name": "38 rue Turbigo",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056334/https:",
+      "id": "100056334",
+      "coordinates": [
+        48.86502,
+        2.35387
+      ],
+      "channel_id": "104056334",
+      "channel_name": "SO-NE",
+      "nom_compteur": "38 rue Turbigo SO-NE",
+      "counter": "Y2H19070380",
+      "id_compteur": "100056334-104056334"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35387,
+        48.86502
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "c629bac25667dcf6ce5cb0022c5496c9f7359762",
+    "fields": {
+      "installation_date": "2020-07-22",
+      "name": "90 Rue De S\u00e8vres",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100060178/https:",
+      "id": "100060178",
+      "coordinates": [
+        48.84638,
+        2.31529
+      ],
+      "channel_id": "102060178",
+      "channel_name": "NE-SO",
+      "nom_compteur": "90 Rue De S\u00e8vres NE-SO",
+      "counter": "Y2H20052705",
+      "id_compteur": "100060178-102060178"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31529,
+        48.84638
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "d4424a753e41d853c28f1ed67e75e09a39f7f288",
+    "fields": {
+      "installation_date": "2018-06-27",
+      "name": "72 boulevard Voltaire NO-SE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100044506/https:",
+      "id": "100044506",
+      "coordinates": [
+        48.86155,
+        2.37407
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "72 boulevard Voltaire NO-SE",
+      "counter": "Y2H18034807",
+      "id_compteur": "100044506-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.37407,
+        48.86155
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "96fe3d6d9f13ae0c4ecb5e34bacd8ef7f48ab3a6",
+    "fields": {
+      "installation_date": "2018-11-30",
+      "name": "26 boulevard de M\u00e9nilmontant SE-NO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047537/https:",
+      "id": "100047537",
+      "coordinates": [
+        48.86057,
+        2.38886
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "26 boulevard de M\u00e9nilmontant SE-NO",
+      "counter": "Y2H19068860",
+      "id_compteur": "100047537-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38886,
+        48.86057
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "f7df03a2859b692c35d84f32cc82666f13657ff5",
+    "fields": {
+      "installation_date": "2018-11-30",
+      "name": "Face au 70 quai de Bercy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047546/https:",
+      "id": "100047546",
+      "coordinates": [
+        48.829523,
+        2.38699
+      ],
+      "channel_id": "103047546",
+      "channel_name": "S-N",
+      "nom_compteur": "Face au 70 quai de Bercy S-N",
+      "counter": "Y2H20022165",
+      "id_compteur": "100047546-103047546"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38699,
+        48.829523
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "a99c7f3f8ab4b4b734f8e3db5ece68c7ca7f695b",
+    "fields": {
+      "installation_date": "2018-11-30",
+      "name": "Face au 70 quai de Bercy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047546/https:",
+      "id": "100047546",
+      "coordinates": [
+        48.829523,
+        2.38699
+      ],
+      "channel_id": "104047546",
+      "channel_name": "N-S",
+      "nom_compteur": "Face au 70 quai de Bercy N-S",
+      "counter": "Y2H20022165",
+      "id_compteur": "100047546-104047546"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38699,
+        48.829523
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "696af2ef59d47dcb563b3cd0a0b6c1175f7fa2ff",
+    "fields": {
+      "installation_date": "2019-12-11",
+      "name": "Pont de Bercy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056332/https:",
+      "id": "100056332",
+      "coordinates": [
+        48.83848,
+        2.37587
+      ],
+      "channel_id": "104056332",
+      "channel_name": "SO-NE",
+      "nom_compteur": "Pont de Bercy SO-NE",
+      "counter": "Y2H19070378",
+      "id_compteur": "100056332-104056332"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.37587,
+        48.83848
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "db82aa77a984fbf38aac8623f08bc52b1e7be6a5",
+    "fields": {
+      "installation_date": "2019-11-07",
+      "name": "Quai d'Orsay",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056335/https:",
+      "id": "100056335",
+      "coordinates": [
+        48.86288,
+        2.31179
+      ],
+      "channel_id": "104056335",
+      "channel_name": "E-O",
+      "nom_compteur": "Quai d'Orsay E-O",
+      "counter": "Y2H19070382",
+      "id_compteur": "100056335-104056335"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31179,
+        48.86288
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "8b48c4f14fd620f0c0dd348787dc2863594f9deb",
+    "fields": {
+      "installation_date": "2019-11-14",
+      "name": "27 quai de la Tournelle",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056336/https:",
+      "id": "100056336",
+      "coordinates": [
+        48.85013,
+        2.35423
+      ],
+      "channel_id": "106056336",
+      "channel_name": "NO-SE",
+      "nom_compteur": "27 quai de la Tournelle NO-SE",
+      "counter": "Y2H19070383",
+      "id_compteur": "100056336-106056336"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35423,
+        48.85013
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "612e1664c1f196ebe0492044a6d62ba9ed7fca7a",
+    "fields": {
+      "installation_date": "2017-07-12",
+      "name": "18 quai de l'H\u00f4tel de Ville",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100036719/https:",
+      "id": "100036719",
+      "coordinates": [
+        48.85372,
+        2.35702
+      ],
+      "channel_id": "103036719",
+      "channel_name": "SE-NO",
+      "nom_compteur": "18 quai de l'H\u00f4tel de Ville SE-NO",
+      "counter": "Y2H19027732",
+      "id_compteur": "100036719-103036719"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35702,
+        48.85372
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "1228544e33cc3aa0e46d1ca8248e1888dc0b2fac",
+    "fields": {
+      "installation_date": "2018-06-27",
+      "name": "67 boulevard Voltaire SE-NO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100044493/https:",
+      "id": "100044493",
+      "coordinates": [
+        48.86149,
+        2.37376
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "67 boulevard Voltaire SE-NO",
+      "counter": "Y2H18034809",
+      "id_compteur": "100044493-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.37376,
+        48.86149
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "35d4bae5d45926154108ba59cf39b8160be8dfcd",
+    "fields": {
+      "installation_date": "2018-12-05",
+      "name": "21 boulevard Auguste Blanqui SO-NE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047539/https:",
+      "id": "100047539",
+      "coordinates": [
+        48.830449,
+        2.353199
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "21 boulevard Auguste Blanqui SO-NE",
+      "counter": "Y2H18086315",
+      "id_compteur": "100047539-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.353199,
+        48.830449
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "14dbd4f7bc4cd51650640bb1e95fc362444ef84a",
+    "fields": {
+      "installation_date": "2018-12-07",
+      "name": "152 boulevard du Montparnasse",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100049407/https:",
+      "id": "100049407",
+      "coordinates": [
+        48.840801,
+        2.333233
+      ],
+      "channel_id": "353255859",
+      "channel_name": "O-E",
+      "nom_compteur": "152 boulevard du Montparnasse O-E",
+      "counter": "Y2H19070373",
+      "id_compteur": "100049407-353255859"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.333233,
+        48.840801
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "c54ac3c7478ee5845b69c5539a8ee4236eb55357",
+    "fields": {
+      "installation_date": "2021-11-30",
+      "name": "69 Boulevard Ornano N-S",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/300021320/https:",
+      "id": "300021320",
+      "coordinates": [
+        48.89683,
+        2.34521
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "69 Boulevard Ornano N-S",
+      "counter": "Y2H21110997",
+      "id_compteur": "300021320-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.34521,
+        48.89683
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "c3300fc2d8ffd1f63ba68857c262b2965fb06b05",
+    "fields": {
+      "installation_date": "2013-01-18",
+      "name": "28 boulevard Diderot",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100007049/https:",
+      "id": "100007049",
+      "coordinates": [
+        48.846028,
+        2.375429
+      ],
+      "channel_id": "102007049",
+      "channel_name": "E-O",
+      "nom_compteur": "28 boulevard Diderot E-O",
+      "counter": "Y2H15027244",
+      "id_compteur": "100007049-102007049"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.375429,
+        48.846028
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "be0ad6f69cc0837c4d8eb762c35e364f815ed2dc",
+    "fields": {
+      "installation_date": "2019-10-30",
+      "name": "44 avenue des Champs Elys\u00e9es SE-NO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056038/https:",
+      "id": "100056038",
+      "coordinates": [
+        48.869873,
+        2.307419
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "44 avenue des Champs Elys\u00e9es SE-NO",
+      "counter": "Y2H19070341",
+      "id_compteur": "100056038-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.307419,
+        48.869873
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "7a1e8e588154801156dd54d54bef5914c2029516",
+    "fields": {
+      "installation_date": "2019-10-30",
+      "name": "132 rue Lecourbe NE-SO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056044/https:",
+      "id": "100056044",
+      "coordinates": [
+        48.84216,
+        2.30115
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "132 rue Lecourbe NE-SO",
+      "counter": "Y2H19070359",
+      "id_compteur": "100056044-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.30115,
+        48.84216
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "aececd2b23a2ad603e5f41759d123c90fe6ac9e9",
+    "fields": {
+      "installation_date": "2019-11-14",
+      "name": "36 quai de Grenelle",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056330/https:",
+      "id": "100056330",
+      "coordinates": [
+        48.85209,
+        2.28508
+      ],
+      "channel_id": "104056330",
+      "channel_name": "NE-SO",
+      "nom_compteur": "36 quai de Grenelle NE-SO",
+      "counter": "Y2H19070376",
+      "id_compteur": "100056330-104056330"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.28508,
+        48.85209
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "b47feb082d97302e8877913b255a442bfece625a",
+    "fields": {
+      "installation_date": "2019-11-05",
+      "name": "Face au 40 quai D'Issy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056331/https:",
+      "id": "100056331",
+      "coordinates": [
+        48.83421,
+        2.26542
+      ],
+      "channel_id": "104056331",
+      "channel_name": "NE-SO",
+      "nom_compteur": "Face au 40 quai D'Issy NE-SO",
+      "counter": "Y2H19070377",
+      "id_compteur": "100056331-104056331"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.26542,
+        48.83421
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "e69b3c3bc7f3cdf86faab4013b1636aeb5393826",
+    "fields": {
+      "installation_date": "2020-02-18",
+      "name": "Totem 85 quai d'Austerlitz",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100057329/https:",
+      "id": "100057329",
+      "coordinates": [
+        48.84201,
+        2.36729
+      ],
+      "channel_id": "104057329",
+      "channel_name": "NO-SE",
+      "nom_compteur": "Totem 85 quai d'Austerlitz NO-SE",
+      "counter": "YTH19111508",
+      "id_compteur": "100057329-104057329"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.36729,
+        48.84201
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "67090e365414168eed5c5e41f25cb39e78f900d0",
+    "fields": {
+      "installation_date": "2018-12-05",
+      "name": "77 boulevard Richard Lenoir N-S",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047544/https:",
+      "id": "100047544",
+      "coordinates": [
+        48.860852,
+        2.372279
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "77 boulevard Richard Lenoir N-S",
+      "counter": "Y2H18086320",
+      "id_compteur": "100047544-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.372279,
+        48.860852
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "2f5eaa20e79f40101437d6187ab2a6a618420a14",
+    "fields": {
+      "installation_date": "2018-12-07",
+      "name": "152 boulevard du Montparnasse",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100049407/https:",
+      "id": "100049407",
+      "coordinates": [
+        48.840801,
+        2.333233
+      ],
+      "channel_id": "353255860",
+      "channel_name": "E-O",
+      "nom_compteur": "152 boulevard du Montparnasse E-O",
+      "counter": "Y2H19070373",
+      "id_compteur": "100049407-353255860"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.333233,
+        48.840801
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "481613682d96bfbffd17f72d2f1fa0859786300d",
+    "fields": {
+      "installation_date": "2019-09-04",
+      "name": "Totem 64 Rue de Rivoli",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100050876/https:",
+      "id": "100050876",
+      "coordinates": [
+        48.85735,
+        2.35211
+      ],
+      "channel_id": "104050876",
+      "channel_name": "O-E",
+      "nom_compteur": "Totem 64 Rue de Rivoli O-E",
+      "counter": "YTH19037970",
+      "id_compteur": "100050876-104050876"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35211,
+        48.85735
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "89d154231514192ba659d80f903b82f4f1a53490",
+    "fields": {
+      "installation_date": "2019-11-07",
+      "name": "Pont des Invalides N-S",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056223/https:",
+      "id": "100056223",
+      "coordinates": [
+        48.86284,
+        2.310345
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Pont des Invalides N-S",
+      "counter": "Y2H19070365",
+      "id_compteur": "100056223-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.310345,
+        48.86284
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "dec3f2c8e49bb7ddcdc2876430e680b837d207f3",
+    "fields": {
+      "installation_date": "2019-11-01",
+      "name": "Face au 8 avenue de la porte de Charenton",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056226/https:",
+      "id": "100056226",
+      "coordinates": [
+        48.830331,
+        2.400551
+      ],
+      "channel_id": "103056226",
+      "channel_name": "SE-NO",
+      "nom_compteur": "Face au 8 avenue de la porte de Charenton SE-NO",
+      "counter": "Y2H19070370",
+      "id_compteur": "100056226-103056226"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.400551,
+        48.830331
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "0aa77818cec5c4af58b9461bd53175cdacd65a3b",
+    "fields": {
+      "installation_date": "2019-12-12",
+      "name": "Pont Charles De Gaulle",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056329/https:",
+      "id": "100056329",
+      "coordinates": [
+        48.84223,
+        2.36811
+      ],
+      "channel_id": "104056329",
+      "channel_name": "NE-SO",
+      "nom_compteur": "Pont Charles De Gaulle NE-SO",
+      "counter": "Y2H19070375",
+      "id_compteur": "100056329-104056329"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.36811,
+        48.84223
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "eab650bb445882f6260a4169c26a8768c0df82bd",
+    "fields": {
+      "installation_date": "2018-12-05",
+      "name": "Pont National SO-NE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047541/https:",
+      "id": "100047541",
+      "coordinates": [
+        48.82658,
+        2.38409
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Pont National SO-NE",
+      "counter": "Y2H18086317",
+      "id_compteur": "100047541-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38409,
+        48.82658
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "26e978ccd2f359deb864738bb664a3831a560be7",
+    "fields": {
+      "installation_date": "2018-11-28",
+      "name": "Face au 25 quai de l'Oise",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047548/https:",
+      "id": "100047548",
+      "coordinates": [
+        48.89141,
+        2.38482
+      ],
+      "channel_id": "103047548",
+      "channel_name": "NE-SO",
+      "nom_compteur": "Face au 25 quai de l'Oise NE-SO",
+      "counter": "Y2H18086324",
+      "id_compteur": "100047548-103047548"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38482,
+        48.89141
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "2fc18ecbcd359e431ce7e0519474f726194b7986",
+    "fields": {
+      "installation_date": "2019-11-08",
+      "name": "Pont de la Concorde N-S",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056045/https:",
+      "id": "100056045",
+      "coordinates": [
+        48.86373,
+        2.31973
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Pont de la Concorde N-S",
+      "counter": "Y2H20083602",
+      "id_compteur": "100056045-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31973,
+        48.86373
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "933fdcc9654e761c3e38e9b5df2f219c1d1d80e4",
+    "fields": {
+      "installation_date": "2019-11-06",
+      "name": "3 avenue de la Porte D'Orl\u00e9ans S-N",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056225/https:",
+      "id": "100056225",
+      "coordinates": [
+        48.82108,
+        2.32537
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "3 avenue de la Porte D'Orl\u00e9ans S-N",
+      "counter": "Y2H19070367",
+      "id_compteur": "100056225-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.32537,
+        48.82108
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "bfdb242ab20f2cc66ae57655d33ef09cc6f642ee",
+    "fields": {
+      "installation_date": "2020-11-18",
+      "name": "35 boulevard de M\u00e9nilmontant",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100065336",
+      "id": "100065336",
+      "coordinates": [
+        48.860528,
+        2.388364
+      ],
+      "channel_id": "104065336",
+      "channel_name": "NO-SE",
+      "nom_compteur": "35 boulevard de M\u00e9nilmontant NO-SE",
+      "id_compteur": "100065336-104065336"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.388364,
+        48.860528
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "a6a1d15f561ce1f3fddc84f7a52d679853b5569c",
+    "fields": {
+      "installation_date": "2020-11-29",
+      "name": "254 rue de Vaugirard",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/300014702/https:",
+      "id": "300014702",
+      "coordinates": [
+        48.83977,
+        2.30198
+      ],
+      "channel_id": "353245971",
+      "channel_name": "SO-NE",
+      "nom_compteur": "254 rue de Vaugirard SO-NE",
+      "counter": "Y2H20114504",
+      "id_compteur": "300014702-353245971"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.30198,
+        48.83977
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "7b35a3057d0ef8142cf3682ec71c49673bf94220",
+    "fields": {
+      "installation_date": "2018-11-29",
+      "name": "Face 104 rue d'Aubervilliers",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047545/https:",
+      "id": "100047545",
+      "coordinates": [
+        48.890457,
+        2.368852
+      ],
+      "channel_id": "103047545",
+      "channel_name": "N-S",
+      "nom_compteur": "Face 104 rue d'Aubervilliers N-S",
+      "counter": "Y2H18086321",
+      "id_compteur": "100047545-103047545"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.368852,
+        48.890457
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "beccf45f8f8ee27cf5277675d0ff63af32b9d7dc",
+    "fields": {
+      "installation_date": "2019-11-08",
+      "name": "Pont de la Concorde S-N",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056047/https:",
+      "id": "100056047",
+      "coordinates": [
+        48.86378,
+        2.32003
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Pont de la Concorde S-N",
+      "counter": "Y2H19070356",
+      "id_compteur": "100056047-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.32003,
+        48.86378
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "e257096bfba850e35aff2ebb19621efd2865832c",
+    "fields": {
+      "installation_date": "2019-11-07",
+      "name": "Quai d'Orsay",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056335/https:",
+      "id": "100056335",
+      "coordinates": [
+        48.86288,
+        2.31179
+      ],
+      "channel_id": "103056335",
+      "channel_name": "O-E",
+      "nom_compteur": "Quai d'Orsay O-E",
+      "counter": "Y2H19070382",
+      "id_compteur": "100056335-103056335"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31179,
+        48.86288
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "c8fdff9b827b7c4bf628a00f08636615ffe2f42e",
+    "fields": {
+      "installation_date": "2020-05-20",
+      "name": "21 boulevard Saint Michel S-N",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100060174/https:",
+      "id": "100060174",
+      "coordinates": [
+        48.851525,
+        2.343298
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "21 boulevard Saint Michel S-N",
+      "counter": "Y2H20052701",
+      "id_compteur": "100060174-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.343298,
+        48.851525
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "93ec9a22ab4c68d74e8b1ff0c0312a0ad9f9e321",
+    "fields": {
+      "installation_date": "2020-07-22",
+      "name": "74 Boulevard Ornano S-N",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100063173/https:",
+      "id": "100063173",
+      "coordinates": [
+        48.896825,
+        2.345648
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "74 Boulevard Ornano S-N",
+      "counter": "Y2H20073266",
+      "id_compteur": "100063173-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.345648,
+        48.896825
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "b51e39020a3c81c6a4542a000262c04d81376034",
+    "fields": {
+      "installation_date": "2018-11-29",
+      "name": "Face au 48 quai de la marne",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047542/https:",
+      "id": "100047542",
+      "coordinates": [
+        48.89172,
+        2.38531
+      ],
+      "channel_id": "103047542",
+      "channel_name": "NE-SO",
+      "nom_compteur": "Face au 48 quai de la marne NE-SO",
+      "counter": "Y2H18086318",
+      "id_compteur": "100047542-103047542"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38531,
+        48.89172
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "37ed1c144d760fd62b459a1ea93722863f502886",
+    "fields": {
+      "installation_date": "2018-12-05",
+      "name": "Pont National  NE-SO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047549/https:",
+      "id": "100047549",
+      "coordinates": [
+        48.82682,
+        2.38465
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Pont National  NE-SO",
+      "counter": "Y2H18086325",
+      "id_compteur": "100047549-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38465,
+        48.82682
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "eafe56bd05b9a3db28a9170bf832f8e44869a6ee",
+    "fields": {
+      "installation_date": "2021-05-18",
+      "name": "Quai des Tuileries",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056035/https:",
+      "id": "100056035",
+      "coordinates": [
+        48.86357,
+        2.32203
+      ],
+      "channel_id": "353266460",
+      "channel_name": "SE-NO",
+      "nom_compteur": "Quai des Tuileries SE-NO",
+      "counter": "Y2H19070337",
+      "id_compteur": "100056035-353266460"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.32203,
+        48.86357
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "b0e980b47a1cc531dcabfbb633d81f374eb3e353",
+    "fields": {
+      "installation_date": "2019-10-30",
+      "name": "33 avenue des Champs Elys\u00e9es NO-SE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056042/https:",
+      "id": "100056042",
+      "coordinates": [
+        48.869831,
+        2.307076
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "33 avenue des Champs Elys\u00e9es NO-SE",
+      "counter": "Y2H19070354",
+      "id_compteur": "100056042-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.307076,
+        48.869831
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "1a60daf1a76bed6d11078113d461c7313ef62c60",
+    "fields": {
+      "installation_date": "2019-11-06",
+      "name": "Pont des Invalides S-N",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056046/https:",
+      "id": "100056046",
+      "coordinates": [
+        48.86282,
+        2.31061
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Pont des Invalides S-N",
+      "counter": "Y2H19070357",
+      "id_compteur": "100056046-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31061,
+        48.86282
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "26625fbdea2aba4b4485f11a36618ec3053a88eb",
+    "fields": {
+      "installation_date": "2012-02-22",
+      "name": "106 avenue Denfert Rochereau NE-SO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100003098/https:",
+      "id": "100003098",
+      "coordinates": [
+        48.83521,
+        2.33307
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "106 avenue Denfert Rochereau NE-SO",
+      "counter": "Y2H16029278",
+      "id_compteur": "100003098-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.33307,
+        48.83521
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "5670420b805dfa9e4c480f83bc083ec9bb686435",
+    "fields": {
+      "installation_date": "2017-12-15",
+      "name": "Voie Georges Pompidou",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100042374/https:",
+      "id": "100042374",
+      "coordinates": [
+        48.8484,
+        2.27586
+      ],
+      "channel_id": "110042374",
+      "channel_name": "NE-SO",
+      "nom_compteur": "Voie Georges Pompidou NE-SO",
+      "counter": "Y2H21025335",
+      "id_compteur": "100042374-110042374"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.27586,
+        48.8484
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "09c1e6ca37a0c42bde5bd4decb19b8adb732e683",
+    "fields": {
+      "installation_date": "2021-05-18",
+      "name": "Quai des Tuileries",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056035/https:",
+      "id": "100056035",
+      "coordinates": [
+        48.86357,
+        2.32203
+      ],
+      "channel_id": "353266462",
+      "channel_name": "NO-SE",
+      "nom_compteur": "Quai des Tuileries NO-SE",
+      "counter": "Y2H19070337",
+      "id_compteur": "100056035-353266462"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.32203,
+        48.86357
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "a5731d494acc2637cfe1a23b03f5b0343e2c2a94",
+    "fields": {
+      "installation_date": "2019-10-30",
+      "name": "129 rue Lecourbe SO-NE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056040/https:",
+      "id": "100056040",
+      "coordinates": [
+        48.842091,
+        2.301
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "129 rue Lecourbe SO-NE",
+      "counter": "Y2H21015067",
+      "id_compteur": "100056040-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.301,
+        48.842091
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "8aa00e255536a976aeaae119ddb59a7d04e6b986",
+    "fields": {
+      "installation_date": "2020-07-22",
+      "name": "90 Rue De S\u00e8vres",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100060178/https:",
+      "id": "100060178",
+      "coordinates": [
+        48.84638,
+        2.31529
+      ],
+      "channel_id": "101060178",
+      "channel_name": "SO-NE",
+      "nom_compteur": "90 Rue De S\u00e8vres SO-NE",
+      "counter": "Y2H20052705",
+      "id_compteur": "100060178-101060178"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31529,
+        48.84638
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "1e4df14bee75123578df2979ea186af8da0ebcc1",
+    "fields": {
+      "installation_date": "2012-02-22",
+      "name": "100 rue La Fayette",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100003099/https:",
+      "id": "100003099",
+      "coordinates": [
+        48.87813,
+        2.3497
+      ],
+      "channel_id": "353242239",
+      "channel_name": "O-E",
+      "nom_compteur": "100 rue La Fayette O-E",
+      "counter": "Y2H21100755",
+      "id_compteur": "100003099-353242239"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.3497,
+        48.87813
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "c66cda7176bb51f2e43946b44262e454aeca5767",
+    "fields": {
+      "installation_date": "2018-07-27",
+      "name": "10 avenue de la Grande Arm\u00e9e SE-NO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100044494/https:",
+      "id": "100044494",
+      "coordinates": [
+        48.874716,
+        2.292439
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "10 avenue de la Grande Arm\u00e9e SE-NO",
+      "counter": "Y2H18034808",
+      "id_compteur": "100044494-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.292439,
+        48.874716
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "fbd2affea3dace58ea2dabe15e1ba7ef84029742",
+    "fields": {
+      "installation_date": "2018-11-28",
+      "name": "Face au 25 quai de l'Oise",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047548/https:",
+      "id": "100047548",
+      "coordinates": [
+        48.89141,
+        2.38482
+      ],
+      "channel_id": "104047548",
+      "channel_name": "SO-NE",
+      "nom_compteur": "Face au 25 quai de l'Oise SO-NE",
+      "counter": "Y2H18086324",
+      "id_compteur": "100047548-104047548"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38482,
+        48.89141
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "d282078a84849ce83239215d875b99af1f54ef9d",
+    "fields": {
+      "installation_date": "2019-12-10",
+      "name": "147 avenue d'Italie S-N",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056041/https:",
+      "id": "100056041",
+      "coordinates": [
+        48.82026,
+        2.3592
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "147 avenue d'Italie S-N",
+      "counter": "Y2H19070344",
+      "id_compteur": "100056041-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.3592,
+        48.82026
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "b0063a239a0daa3def64d70d4e60e74dabba89b6",
+    "fields": {
+      "installation_date": "2019-11-14",
+      "name": "36 quai de Grenelle",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056330/https:",
+      "id": "100056330",
+      "coordinates": [
+        48.85209,
+        2.28508
+      ],
+      "channel_id": "103056330",
+      "channel_name": "SO-NE",
+      "nom_compteur": "36 quai de Grenelle SO-NE",
+      "counter": "Y2H19070376",
+      "id_compteur": "100056330-103056330"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.28508,
+        48.85209
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "de862db85edeabb12e1cbf4b9280119952a093df",
+    "fields": {
+      "installation_date": "2019-12-11",
+      "name": "Pont de Bercy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056332/https:",
+      "id": "100056332",
+      "coordinates": [
+        48.83848,
+        2.37587
+      ],
+      "channel_id": "103056332",
+      "channel_name": "NE-SO",
+      "nom_compteur": "Pont de Bercy NE-SO",
+      "counter": "Y2H19070378",
+      "id_compteur": "100056332-103056332"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.37587,
+        48.83848
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "931986dc4b2226d7fd6161dea4cf889ddc296cbc",
+    "fields": {
+      "installation_date": "2020-07-22",
+      "name": "69 Boulevard Ornano N-S (temporaire)",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100063174/https:",
+      "id": "100063174",
+      "coordinates": [
+        48.89696,
+        2.34538
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "69 Boulevard Ornano N-S (temporaire)",
+      "counter": "Y2H20073267",
+      "id_compteur": "100063174-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.34538,
+        48.89696
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "20d4e42356493fe46e3c8b9ec256cdc326e5a4ed",
+    "fields": {
+      "installation_date": "2017-12-15",
+      "name": "Voie Georges Pompidou",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100042374/https:",
+      "id": "100042374",
+      "coordinates": [
+        48.8484,
+        2.27586
+      ],
+      "channel_id": "109042374",
+      "channel_name": "SO-NE",
+      "nom_compteur": "Voie Georges Pompidou SO-NE",
+      "counter": "Y2H21025335",
+      "id_compteur": "100042374-109042374"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.27586,
+        48.8484
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "d67c06395ca07f664075cc3cb7665fea642bc458",
+    "fields": {
+      "installation_date": "2018-11-28",
+      "name": "89 boulevard de Magenta NO-SE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047533/https:",
+      "id": "100047533",
+      "coordinates": [
+        48.87756,
+        2.35535
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "89 boulevard de Magenta NO-SE",
+      "counter": "Y2H18086309",
+      "id_compteur": "100047533-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35535,
+        48.87756
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "131b72ffc8bdfd12d0b38daee59335224a457456",
+    "fields": {
+      "installation_date": "2019-11-06",
+      "name": "Face au 4 avenue de la porte de Bagnolet",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056327/https:",
+      "id": "100056327",
+      "coordinates": [
+        48.86461,
+        2.40969
+      ],
+      "channel_id": "104056327",
+      "channel_name": "O-E",
+      "nom_compteur": "Face au 4 avenue de la porte de Bagnolet O-E",
+      "counter": "Y2H19070372",
+      "id_compteur": "100056327-104056327"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.40969,
+        48.86461
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "bdce28f5d461edeeebad8fd3223e40aebab15217",
+    "fields": {
+      "installation_date": "2020-02-18",
+      "name": "Totem 85 quai d'Austerlitz",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100057329/https:",
+      "id": "100057329",
+      "coordinates": [
+        48.84201,
+        2.36729
+      ],
+      "channel_id": "103057329",
+      "channel_name": "SE-NO",
+      "nom_compteur": "Totem 85 quai d'Austerlitz SE-NO",
+      "counter": "YTH19111508",
+      "id_compteur": "100057329-103057329"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.36729,
+        48.84201
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "0cb2f203396fcd3b6884b352d2cbd09d3e315214",
+    "fields": {
+      "installation_date": "2018-11-29",
+      "name": "16 avenue de la Porte des Ternes E-O",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047534/https:",
+      "id": "100047534",
+      "coordinates": [
+        48.88181,
+        2.281546
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "16 avenue de la Porte des Ternes E-O",
+      "counter": "Y2H18086310",
+      "id_compteur": "100047534-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.281546,
+        48.88181
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "d90d6e17e75413edc577b3df98813d7e89109f64",
+    "fields": {
+      "installation_date": "2020-02-11",
+      "name": "Totem Cours la Reine",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100057380/https:",
+      "id": "100057380",
+      "coordinates": [
+        48.86462,
+        2.31444
+      ],
+      "channel_id": "104057380",
+      "channel_name": "E-O",
+      "nom_compteur": "Totem Cours la Reine E-O",
+      "counter": "YTH19111509",
+      "id_compteur": "100057380-104057380"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31444,
+        48.86462
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "ff21c54aa6612987d4afaba21e144924f35516f0",
+    "fields": {
+      "installation_date": "2021-11-30",
+      "name": "30 rue Saint Jacques N-S",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/300021312/https:",
+      "id": "300021312",
+      "coordinates": [
+        48.851131,
+        2.345678
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "30 rue Saint Jacques N-S",
+      "counter": "Y2H21110998",
+      "id_compteur": "300021312-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.345678,
+        48.851131
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "c5cd9b4dd0120db625ca2ded7edb9aa808fea5d9",
+    "fields": {
+      "installation_date": "2018-12-06",
+      "name": "10 boulevard Auguste Blanqui NE-SO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100049408/https:",
+      "id": "100049408",
+      "coordinates": [
+        48.83068,
+        2.35348
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "10 boulevard Auguste Blanqui NE-SO",
+      "counter": "Y2H18086319",
+      "id_compteur": "100049408-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35348,
+        48.83068
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "2b61c507e433a4df73a7c552a0a8ae1af5d6ae82",
+    "fields": {
+      "installation_date": "2019-11-05",
+      "name": "87 avenue de Flandre NE-SO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056032/https:",
+      "id": "100056032",
+      "coordinates": [
+        48.88926,
+        2.37472
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "87 avenue de Flandre NE-SO",
+      "counter": "Y2H19070334",
+      "id_compteur": "100056032-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.37472,
+        48.88926
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "31767f603dfe9abedff80e194bbe1410ce0efe5f",
+    "fields": {
+      "installation_date": "2019-12-11",
+      "name": "180 avenue d'Italie N-S",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056039/https:",
+      "id": "100056039",
+      "coordinates": [
+        48.82024,
+        2.35902
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "180 avenue d'Italie N-S",
+      "counter": "Y2H19070342",
+      "id_compteur": "100056039-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35902,
+        48.82024
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "cfefc21e4529e44af4af231e134421f3b04f3f6b",
+    "fields": {
+      "installation_date": "2020-07-22",
+      "name": "20 Avenue de Clichy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100063175/https:",
+      "id": "100063175",
+      "coordinates": [
+        48.88529,
+        2.32666
+      ],
+      "channel_id": "353277233",
+      "channel_name": "NO-SE",
+      "nom_compteur": "20 Avenue de Clichy NO-SE",
+      "counter": "Y2H20073268",
+      "id_compteur": "100063175-353277233"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.32666,
+        48.88529
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "2e945e4d48573323f43244d173ea0b2785e12f05",
+    "fields": {
+      "installation_date": "2020-11-29",
+      "name": "254 rue de Vaugirard",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/300014702/https:",
+      "id": "300014702",
+      "coordinates": [
+        48.83977,
+        2.30198
+      ],
+      "channel_id": "353245972",
+      "channel_name": "NE-SO",
+      "nom_compteur": "254 rue de Vaugirard NE-SO",
+      "counter": "Y2H20114504",
+      "id_compteur": "300014702-353245972"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.30198,
+        48.83977
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "2b838e356af527ad770ac4fe1f1711d78e6b4253",
+    "fields": {
+      "installation_date": "2018-12-05",
+      "name": "72 boulevard Richard Lenoir  S-N",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047540/https:",
+      "id": "100047540",
+      "coordinates": [
+        48.86077,
+        2.37305
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "72 boulevard Richard Lenoir  S-N",
+      "counter": "Y2H16110952",
+      "id_compteur": "100047540-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.37305,
+        48.86077
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "0475d79394c574ed0b7602914184b3f88cc57e4e",
+    "fields": {
+      "installation_date": "2018-11-28",
+      "name": "6 rue Julia Bartet",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047547/https:",
+      "id": "100047547",
+      "coordinates": [
+        48.82636,
+        2.30303
+      ],
+      "channel_id": "103047547",
+      "channel_name": "SO-NE",
+      "nom_compteur": "6 rue Julia Bartet SO-NE",
+      "counter": "Y2H18086323",
+      "id_compteur": "100047547-103047547"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.30303,
+        48.82636
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "dd51fc5d7a2504dc1c26567607f3763bf1db0566",
+    "fields": {
+      "installation_date": "2019-11-14",
+      "name": "27 quai de la Tournelle",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056336/https:",
+      "id": "100056336",
+      "coordinates": [
+        48.85013,
+        2.35423
+      ],
+      "channel_id": "105056336",
+      "channel_name": "SE-NO",
+      "nom_compteur": "27 quai de la Tournelle SE-NO",
+      "counter": "Y2H19070383",
+      "id_compteur": "100056336-105056336"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35423,
+        48.85013
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "c813c50b66ccbc8301b99b53358fdf0eb6ffc435",
+    "fields": {
+      "installation_date": "2020-02-11",
+      "name": "Totem 73 boulevard de S\u00e9bastopol",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100057445/https:",
+      "id": "100057445",
+      "coordinates": [
+        48.86377,
+        2.35096
+      ],
+      "channel_id": "104057445",
+      "channel_name": "S-N",
+      "nom_compteur": "Totem 73 boulevard de S\u00e9bastopol S-N",
+      "counter": "YTH19111510",
+      "id_compteur": "100057445-104057445"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35096,
+        48.86377
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "dfa8fa2b88bd97b414825abf140a5331b1173e9b",
+    "fields": {
+      "installation_date": "2013-01-17",
+      "name": "27 boulevard Diderot E-O",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100041488/https:",
+      "id": "100041488",
+      "coordinates": [
+        48.846099,
+        2.375456
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "27 boulevard Diderot E-O",
+      "counter": "Y2H17052298",
+      "id_compteur": "100041488-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.375456,
+        48.846099
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "d6b0cc5d568a934e9f7ef9c32b5222da49fa0e38",
+    "fields": {
+      "installation_date": "2018-11-28",
+      "name": "Pont du Garigliano NO-SE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047535/https:",
+      "id": "100047535",
+      "coordinates": [
+        48.84015,
+        2.26733
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Pont du Garigliano NO-SE",
+      "counter": "Y2H18086311",
+      "id_compteur": "100047535-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.26733,
+        48.84015
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "a8e6b53ade912f8de2a1863f57d336dc56541576",
+    "fields": {
+      "installation_date": "2020-05-20",
+      "name": "30 rue Saint Jacques N-S (temporaire)",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100060175/https:",
+      "id": "100060175",
+      "coordinates": [
+        48.851131,
+        2.345678
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "30 rue Saint Jacques N-S (temporaire)",
+      "counter": "Y2H20052702",
+      "id_compteur": "100060175-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.345678,
+        48.851131
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "d86e56ec5240ff8bdddc42efd22df0bf375f0cd9",
+    "fields": {
+      "installation_date": "2017-07-12",
+      "name": "18 quai de l'H\u00f4tel de Ville",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100036719/https:",
+      "id": "100036719",
+      "coordinates": [
+        48.85372,
+        2.35702
+      ],
+      "channel_id": "104036719",
+      "channel_name": "NO-SE",
+      "nom_compteur": "18 quai de l'H\u00f4tel de Ville NO-SE",
+      "counter": "Y2H19027732",
+      "id_compteur": "100036719-104036719"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35702,
+        48.85372
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "54e1ed3953318af41bfaedd40f31289e17625d65",
+    "fields": {
+      "installation_date": "2018-12-13",
+      "name": "243 boulevard Saint Germain NO-SE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100050132/https:",
+      "id": "100050132",
+      "coordinates": [
+        48.86179,
+        2.32014
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "243 boulevard Saint Germain NO-SE",
+      "counter": "Y2H18034810",
+      "id_compteur": "100050132-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.32014,
+        48.86179
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "95eb8f40f552786abbe8443bfae1dbfee0abf0f5",
+    "fields": {
+      "installation_date": "2019-09-04",
+      "name": "Totem 64 Rue de Rivoli",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100050876/https:",
+      "id": "100050876",
+      "coordinates": [
+        48.85735,
+        2.35211
+      ],
+      "channel_id": "103050876",
+      "channel_name": "E-O",
+      "nom_compteur": "Totem 64 Rue de Rivoli E-O",
+      "counter": "YTH19037970",
+      "id_compteur": "100050876-103050876"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35211,
+        48.85735
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "769e8faa862b6faa33199a5aa85f719282e89a29",
+    "fields": {
+      "installation_date": "2020-07-22",
+      "name": "20 Avenue de Clichy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100063175/https:",
+      "id": "100063175",
+      "coordinates": [
+        48.88529,
+        2.32666
+      ],
+      "channel_id": "353277235",
+      "channel_name": "SE-NO",
+      "nom_compteur": "20 Avenue de Clichy SE-NO",
+      "counter": "Y2H20073268",
+      "id_compteur": "100063175-353277235"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.32666,
+        48.88529
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "94b54c96538539c42b17b0519019da3b5e290c75",
+    "fields": {
+      "installation_date": "2018-11-29",
+      "name": "Face au 48 quai de la marne",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047542/https:",
+      "id": "100047542",
+      "coordinates": [
+        48.89172,
+        2.38531
+      ],
+      "channel_id": "104047542",
+      "channel_name": "SO-NE",
+      "nom_compteur": "Face au 48 quai de la marne SO-NE",
+      "counter": "Y2H18086318",
+      "id_compteur": "100047542-104047542"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.38531,
+        48.89172
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "54bbd811cb6525f1e8676e8115e2f0db9ec3b807",
+    "fields": {
+      "installation_date": "2019-11-01",
+      "name": "Face au 8 avenue de la porte de Charenton",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056226/https:",
+      "id": "100056226",
+      "coordinates": [
+        48.830331,
+        2.400551
+      ],
+      "channel_id": "104056226",
+      "channel_name": "NO-SE",
+      "nom_compteur": "Face au 8 avenue de la porte de Charenton NO-SE",
+      "counter": "Y2H19070370",
+      "id_compteur": "100056226-104056226"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.400551,
+        48.830331
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "e460fd989d1813f816f41ecf2eb8b1bde3a00aac",
+    "fields": {
+      "installation_date": "2020-02-11",
+      "name": "Totem Cours la Reine",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100057380/https:",
+      "id": "100057380",
+      "coordinates": [
+        48.86462,
+        2.31444
+      ],
+      "channel_id": "103057380",
+      "channel_name": "O-E",
+      "nom_compteur": "Totem Cours la Reine O-E",
+      "counter": "YTH19111509",
+      "id_compteur": "100057380-103057380"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.31444,
+        48.86462
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "0ced033582b93c535d336ca024e66f53b814c191",
+    "fields": {
+      "installation_date": "2019-11-13",
+      "name": "72 avenue de Flandre SO-NE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056034/https:",
+      "id": "100056034",
+      "coordinates": [
+        48.889046,
+        2.374872
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "72 avenue de Flandre SO-NE",
+      "counter": "Y2H19070336",
+      "id_compteur": "100056034-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.374872,
+        48.889046
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "f0b63b5ae1c3e98083f6e7a9353a2da15f1a0d2a",
+    "fields": {
+      "installation_date": "2020-02-11",
+      "name": "Totem 73 boulevard de S\u00e9bastopol",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100057445/https:",
+      "id": "100057445",
+      "coordinates": [
+        48.86377,
+        2.35096
+      ],
+      "channel_id": "103057445",
+      "channel_name": "N-S",
+      "nom_compteur": "Totem 73 boulevard de S\u00e9bastopol N-S",
+      "counter": "YTH19111510",
+      "id_compteur": "100057445-103057445"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35096,
+        48.86377
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "a387c9d0b2e97b98ec2badc14b51cd6da5473dec",
+    "fields": {
+      "installation_date": "2013-01-19",
+      "name": "135 avenue Daumesnil SE-NO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100006300/https:",
+      "id": "100006300",
+      "coordinates": [
+        48.843435,
+        2.383378
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "135 avenue Daumesnil SE-NO",
+      "counter": "X2H18086316",
+      "id_compteur": "100006300-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.383378,
+        48.843435
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "46f6eba7e90b1dd7946ead37888030df016eeea3",
+    "fields": {
+      "installation_date": "2013-01-18",
+      "name": "28 boulevard Diderot",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100007049/https:",
+      "id": "100007049",
+      "coordinates": [
+        48.846028,
+        2.375429
+      ],
+      "channel_id": "101007049",
+      "channel_name": "O-E",
+      "nom_compteur": "28 boulevard Diderot O-E",
+      "counter": "Y2H15027244",
+      "id_compteur": "100007049-101007049"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.375429,
+        48.846028
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "6a64da3a1104f1c54a17b041b9991f34a757edfe",
+    "fields": {
+      "installation_date": "2019-11-14",
+      "name": "2 avenue de la Porte de Bagnolet O-E",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056036/https:",
+      "id": "100056036",
+      "coordinates": [
+        48.86451,
+        2.40932
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "2 avenue de la Porte de Bagnolet O-E",
+      "counter": "X2H20093888",
+      "id_compteur": "100056036-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.40932,
+        48.86451
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "2f79c6a489cb0b4c3ec4b2f1cf3de5f6ec8543bb",
+    "fields": {
+      "installation_date": "2019-11-05",
+      "name": "Face au 40 quai D'Issy",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056331/https:",
+      "id": "100056331",
+      "coordinates": [
+        48.83421,
+        2.26542
+      ],
+      "channel_id": "103056331",
+      "channel_name": "SO-NE",
+      "nom_compteur": "Face au 40 quai D'Issy SO-NE",
+      "counter": "Y2H19070377",
+      "id_compteur": "100056331-103056331"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.26542,
+        48.83421
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "0f8978b5fa430f79d94d5adb369ad01318fefd73",
+    "fields": {
+      "installation_date": "2019-12-10",
+      "name": "38 rue Turbigo",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056334/https:",
+      "id": "100056334",
+      "coordinates": [
+        48.86502,
+        2.35387
+      ],
+      "channel_id": "103056334",
+      "channel_name": "NE-SO",
+      "nom_compteur": "38 rue Turbigo NE-SO",
+      "counter": "Y2H19070380",
+      "id_compteur": "100056334-103056334"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.35387,
+        48.86502
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "208fda366a34f7e1a4eb2b4a730fabf2c0c8d1a8",
+    "fields": {
+      "installation_date": "2012-02-22",
+      "name": "97 avenue Denfert Rochereau",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100003096/https:",
+      "id": "100003096",
+      "coordinates": [
+        48.83511,
+        2.33338
+      ],
+      "channel_id": "353242251",
+      "channel_name": "SO-NE",
+      "nom_compteur": "97 avenue Denfert Rochereau SO-NE",
+      "counter": "X2H20012081",
+      "id_compteur": "100003096-353242251"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.33338,
+        48.83511
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "f1680ebae14e96b199ecde7e7e4a9f2ae4d56dfb",
+    "fields": {
+      "installation_date": "2018-07-27",
+      "name": "7 avenue de la Grande Arm\u00e9e NO-SE",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100044495/https:",
+      "id": "100044495",
+      "coordinates": [
+        48.87451,
+        2.29215
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "7 avenue de la Grande Arm\u00e9e NO-SE",
+      "counter": "Y2H18034806",
+      "id_compteur": "100044495-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.29215,
+        48.87451
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "f9f4a17f6de75cef9ec6512f9ee2c7a548399fb7",
+    "fields": {
+      "installation_date": "2018-11-29",
+      "name": "102 boulevard de Magenta SE-NO",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047536/https:",
+      "id": "100047536",
+      "coordinates": [
+        48.877726,
+        2.354926
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "102 boulevard de Magenta SE-NO",
+      "counter": "Y2H18086312",
+      "id_compteur": "100047536-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.354926,
+        48.877726
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "a2a0c06caf4893af22abd99ba430c34996bdf790",
+    "fields": {
+      "installation_date": "2018-11-28",
+      "name": "Face au 16 avenue de la  Porte des Ternes O-E",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047538/https:",
+      "id": "100047538",
+      "coordinates": [
+        48.881626,
+        2.281203
+      ],
+      "channel_id": "SC",
+      "nom_compteur": "Face au 16 avenue de la  Porte des Ternes O-E",
+      "counter": "Y2H18086314",
+      "id_compteur": "100047538-SC"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.281203,
+        48.881626
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "ffcf1757b3aa922abc25a7e98f0492b67f04a039",
+    "fields": {
+      "installation_date": "2018-11-29",
+      "name": "Face 104 rue d'Aubervilliers",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047545/https:",
+      "id": "100047545",
+      "coordinates": [
+        48.890457,
+        2.368852
+      ],
+      "channel_id": "104047545",
+      "channel_name": "S-N",
+      "nom_compteur": "Face 104 rue d'Aubervilliers S-N",
+      "counter": "Y2H18086321",
+      "id_compteur": "100047545-104047545"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.368852,
+        48.890457
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "776e992c5e0c7d355b786e2cbebe28fad9b0a2f3",
+    "fields": {
+      "installation_date": "2018-12-01",
+      "name": "Pont du Garigliano",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100047551/https:",
+      "id": "100047551",
+      "coordinates": [
+        48.83992,
+        2.26694
+      ],
+      "channel_id": "102047551",
+      "channel_name": "SE-NO",
+      "nom_compteur": "Pont du Garigliano SE-NO",
+      "counter": "Y2H18086327",
+      "id_compteur": "100047551-102047551"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.26694,
+        48.83992
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "34611fc73d184c2fd6ab40e3159e108272c5f72a",
+    "fields": {
+      "installation_date": "2019-11-06",
+      "name": "Face au 4 avenue de la porte de Bagnolet",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056327/https:",
+      "id": "100056327",
+      "coordinates": [
+        48.86461,
+        2.40969
+      ],
+      "channel_id": "103056327",
+      "channel_name": "E-O",
+      "nom_compteur": "Face au 4 avenue de la porte de Bagnolet E-O",
+      "counter": "Y2H19070372",
+      "id_compteur": "100056327-103056327"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.40969,
+        48.86461
+      ]
+    }
+  },
+  {
+    "datasetid": "comptage-velo-compteurs",
+    "recordid": "91b24c72dce7c875f832aea8d3f49fb5b7cb7f58",
+    "fields": {
+      "installation_date": "2019-12-12",
+      "name": "Pont Charles De Gaulle",
+      "url_photos_n1": "https://www.eco-visio.net/Photos/100056329/https:",
+      "id": "100056329",
+      "coordinates": [
+        48.84223,
+        2.36811
+      ],
+      "channel_id": "103056329",
+      "channel_name": "SO-NE",
+      "nom_compteur": "Pont Charles De Gaulle SO-NE",
+      "counter": "Y2H19070375",
+      "id_compteur": "100056329-103056329"
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        2.36811,
+        48.84223
+      ]
+    }
+  }
+]
