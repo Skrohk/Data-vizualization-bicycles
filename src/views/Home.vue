@@ -1,17 +1,26 @@
 <template>
-  <main class="min-h-scren">
+  <main>
     <!-- <sidebar /> -->
-    <div class="p-2">
-      <h1 class="text-h1 font-bold">Visualisation du vélo ouais trop bien</h1>
-      <!-- <graph
-        :renderGraph="renderGraph"
-        :graphData="barChartData"
-        class="mt-10"
-      />
-      <button @click="onClick" class="border border-black p-1 bg-navy-500">
-        Add 5 years
-      </button> -->
-      <graph :renderGraph="renderGeoMap" :graphData="[]" class="mt-10" />
+    <div>
+      <div id="header">
+        <img src="../../public/logo.png" alt="Logo" width="55">
+        <h1 class="text-4xl">BIKE THE WAY</h1>
+      </div>
+<!--      <h1 class="text-h1 font-bold">Visualisation du vélo ouais trop bien</h1>-->
+<!--       <graph-->
+<!--        :renderGraph="renderGraph"-->
+<!--        :graphData="barChartData"-->
+<!--        class="mt-10"-->
+<!--      />-->
+<!--      <button @click="onClick" class="border border-black p-1 bg-navy-500">-->
+<!--        Add 5 years-->
+<!--      </button>-->
+      <graph
+        :renderGraph="renderGeoMap"
+        :graphData="[]"
+        class="fullscreen-map"
+        :is-fullscreen="true"/>
+      <sidebar/>
     </div>
   </main>
 </template>
@@ -41,7 +50,7 @@ export default class Home extends Vue {
 
   renderGeoMap = geoMap;
 
-  async created() {
+  async created(): Promise<void> {
     this.rawData = await d3.csv(
       'https://raw.githubusercontent.com/romsson/visualisation-interactive/main/datasets/gapminder.csv',
     );
@@ -80,3 +89,39 @@ export default class Home extends Vue {
   }
 }
 </script>
+<style scoped>
+/* zen-kurenaido-regular - latin */
+@font-face {
+  font-family: 'Zen Kurenaido';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../public/font/zen-kurenaido-v7-latin-regular.eot');
+  src: local(''),
+  url('../../public/font/zen-kurenaido-v7-latin-regular.eot?#iefix') format('embedded-opentype'),
+  url('../../public/font/zen-kurenaido-v7-latin-regular.woff2') format('woff2'),
+  url('../../public/font/zen-kurenaido-v7-latin-regular.woff') format('woff'),
+  url('../../public/font/zen-kurenaido-v7-latin-regular.ttf') format('truetype'),
+  url('../../public/font/zen-kurenaido-v7-latin-regular.svg#ZenKurenaido') format('svg');
+}
+
+.fullscreen-map {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#header {
+  position: fixed;
+  z-index: 10;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+h1 {
+  font-family: 'Zen Kurenaido',sans-serif;
+  color: #2b2b2b;
+  margin-left: 20px !important;
+}
+</style>
