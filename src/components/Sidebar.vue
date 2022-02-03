@@ -11,15 +11,14 @@ export default {
 </script>
 
 <style scoped>
-  #sidebar-container {
-    width: 30%;
-    height: 100vh;
-    position: fixed;
-    z-index: 1;
-    top:0;
-    right: 0;
-    background-color: grey;
-    overflow-x: hidden;
-    margin-top: 50px;
-  }
+#sidebar-container {
+  width: 30%;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: grey;
+  overflow-x: hidden;
+}
 </style>
