@@ -9,7 +9,7 @@ const lineChart = (
   xLabel = '',
   yLabel = '',
   title = '',
-  width = 700,
+  width = 475,
   height = 300,
 ) => {
   /**
@@ -23,7 +23,7 @@ const lineChart = (
   const xPadding = 50;
   const yPadding = 50;
 
-  const legendWidth = 100;
+  const legendWidth = 0;
 
   const xScale = d3
     .scaleTime()
@@ -64,7 +64,9 @@ const lineChart = (
   });
 
   const xAxis = (g: any) => {
-    g.attr('transform', `translate(0, ${height - yPadding})`).call(d3.axisBottom(xScale));
+    g.attr('transform', `translate(0, ${height - yPadding})`).call(
+      d3.axisBottom(xScale).tickFormat(d3.timeFormat('%b') as any),
+    );
   };
 
   const yAxis = (g: any) => {
@@ -95,29 +97,29 @@ const lineChart = (
   //   .attr('y', yPadding / 2)
   //   .text(title);
 
-  datasets.forEach((dataset, index) => {
-    svg
-      .append('path')
-      .attr('d', d3.symbol())
-      .attr(
-        'transform',
-        `translate(${width - xPadding - legendWidth + 35},${yPadding + index * 20})`,
-      )
-      .attr('fill', colors[index]);
-    svg
-      .append('text')
-      .attr('text-anchor', 'start')
-      .attr('x', width - xPadding - legendWidth + 50)
-      .attr('y', yPadding + index * 20 + 5)
-      .text(legend[index]);
-  });
+  // datasets.forEach((dataset, index) => {
+  //   svg
+  //     .append('path')
+  //     .attr('d', d3.symbol())
+  //     .attr(
+  //       'transform',
+  //       `translate(${width - xPadding - legendWidth + 35},${yPadding + index * 20})`,
+  //     )
+  //     .attr('fill', colors[index]);
+  //   svg
+  //     .append('text')
+  //     .attr('text-anchor', 'start')
+  //     .attr('x', width - xPadding - legendWidth + 50)
+  //     .attr('y', yPadding + index * 20 + 5)
+  //     .text(legend[index]);
+  // });
 };
 
-const getAverage = (data: [number, number][]) =>
+const getAverage = (data: [Date, number][]) =>
   // eslint-disable-next-line
   data.reduce((acc, val) => acc + val[1], 0) / data.length;
 
-export const computeMovingAverage = (data: [number, number][], period: number) => {
+export const computeMovingAverage = (data: [Date, number][], period: number) => {
   const movingAverages = [];
 
   for (let x = 0; x + period - 1 < data.length; x += period) {

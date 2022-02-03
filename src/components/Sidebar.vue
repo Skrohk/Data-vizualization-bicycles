@@ -28,6 +28,13 @@
     <div id="sidebar-container">
       <div>
         <h2>Informations</h2>
+        <div class="flex flex-row items-center my-2">
+          <div class="h-1 w-1 rounded-full bg-red-500 mr-0.5" />
+          <p>Compteur</p>
+
+          <div class="h-1 w-1 rounded-full bg-blue-500 mr-0.5 ml-3" />
+          <p>Station Vélib</p>
+        </div>
         <h3>Note de cyclabilité de l'arrondissement</h3>
         <graph
           :renderGraph="renderPieChart"
@@ -36,12 +43,24 @@
           class="my-2"
         />
         <h3>Compteur</h3>
-        <graph
-          :renderGraph="renderLineChart"
-          :graphData="lineChartData"
-          :is-fullscreen="false"
-          class="my-2"
-        />
+        <div class="my-2">
+          <div
+            class="flex flex-row items-center"
+            v-for="(_, index) in lineChartData"
+            :key="index"
+          >
+            <div
+              class="h-1 w-1 rounded-full mr-0.5"
+              :style="`background-color: ${lineChartColors[index]}`"
+            ></div>
+            <p>{{ lineChartStations[index] }}</p>
+          </div>
+          <graph
+            :renderGraph="renderLineChart"
+            :graphData="lineChartData"
+            :is-fullscreen="false"
+          />
+        </div>
         <h3>Futures informations à venir</h3>
       </div>
       <div class="absolute bottom-1">
@@ -56,22 +75,29 @@ import { Options, Vue } from 'vue-class-component';
 import PieChart from '@/graph/piechart';
 import lineChart, { computeMovingAverage } from '@/graph/lineChart';
 import * as d3 from 'd3';
+// eslint-disable-next-line
+import { watch } from '@vue/runtime-core';
 import Graph from './Graph.vue';
 
 @Options({
   components: {
     Graph,
   },
+  props: {
+    stationId: String,
+  },
 })
 export default class Sidebar extends Vue {
   isOpen = true;
+
+  stationId!: string;
 
   close(): void {
     this.isOpen = !this.isOpen;
   }
 
   renderPieChart = (containerId: string, data: any) => {
-    PieChart(containerId, data, { donutLabel: 'Total : 14', height: 300 });
+    PieChart(containerId, data, { donutLabel: 'Score : 42', height: 300 });
   };
 
   pieChartData = [
@@ -93,22 +119,29 @@ export default class Sidebar extends Vue {
     },
   ];
 
+  lineChartColors = ['#e76f51', '#2a9d8f', '#e9c46a'];
+
+  lineChartStations: string[] = [];
+
   renderLineChart = (containerId: string, data: any) => {
     lineChart(
       containerId,
       data,
-      ['Station 1', 'Station 2', 'Station 3'],
+      this.lineChartStations,
       [d3.symbol().size(20), d3.symbol().size(20)],
-      ['#e76f51', '#2a9d8f', '#e9c46a'],
+      this.lineChartColors,
       'Date',
-      'Nombre de cycliste par heure',
+      'Nombre de cyclistes par heure',
       'Nombre de cycliste moyen par heure pour plusieurs compteurs parisiens',
     );
   };
 
-  async created(): Promise<void> {
-    // eslint-disable-next-line
-    const jsonFile = require('../../public/data/100006300-SC_parsed.json');
+  async fetchAndFormatData() {
+    const jsonFile = await import(
+      `../../public/data/${this.stationId}_parsed.json`
+    );
+
+    this.lineChartStations = [jsonFile.nom];
 
     jsonFile.data.sort((d1: { d: string }, d2: { d: string }) => {
       const date1 = new Date(`${d1.d}:00`);
@@ -117,7 +150,7 @@ export default class Sidebar extends Vue {
       if (date2 > date1) return 1;
       return 0;
     });
-    this.lineChartData.push(
+    return [
       computeMovingAverage(
         jsonFile.data.map((d: { d: string; s: number }) => [
           new Date(`${d.d}:00`),
@@ -125,8 +158,20 @@ export default class Sidebar extends Vue {
         ]),
         20,
       ),
-    );
+    ];
   }
+
+  async mounted(): Promise<void> {
+    this.lineChartData = await this.fetchAndFormatData();
+  }
+
+  // eslint-disable-next-line
+  // async updated(): Promise<void> {
+  //   console.log('Updated ! ');
+  //   setTimeout()
+  //   this.lineChartStations = ['testUupdate'];
+  //   // await this.fetchAndFormatData();
+  // }
 
   lineChartData: any[] = [];
 }
@@ -134,7 +179,7 @@ export default class Sidebar extends Vue {
 
 <style scoped>
 #sidebar {
-  width: 35%;
+  width: 455px;
   height: 95vh;
   position: fixed;
   z-index: 1;
