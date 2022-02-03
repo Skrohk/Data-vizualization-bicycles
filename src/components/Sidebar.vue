@@ -32,7 +32,7 @@
           <div class="h-1 w-1 rounded-full bg-red-500 mr-0.5" />
           <p>Compteur</p>
 
-          <div class="h-1 w-1 rounded-full bg-blue-500 mr-0.5 ml-3" />
+          <div class="h-1 w-1 rounded-full bg-green-700 mr-0.5 ml-3" />
           <p>Station Vélib</p>
         </div>
         <h3>Note de cyclabilité de l'arrondissement</h3>

@@ -72,8 +72,8 @@ export default class Graph<T> extends Vue {
 }
 </script>
 <style scoped>
-div {
+/* div {
   width: 500px;
   height: 500px;
-}
+} */
 </style>
