@@ -31,11 +31,17 @@
         <h3>Note de cyclabilité de l'arrondissement</h3>
         <graph
           :renderGraph="renderPieChart"
-          :graphData="graphData"
+          :graphData="pieChartData"
           :is-fullscreen="false"
           class="my-4"
         />
         <h3>Compteur</h3>
+        <graph
+          :renderGraph="renderLineChart"
+          :graphData="lineChartData"
+          :is-fullscreen="false"
+          class="my-4"
+        />
         <h3>Futures informations à venir</h3>
       </div>
       <div class="absolute bottom-1">
@@ -48,6 +54,8 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import PieChart from '@/graph/piechart';
+import lineChart from '@/graph/lineChart';
+import * as d3 from 'd3';
 import Graph from './Graph.vue';
 
 @Options({
@@ -63,11 +71,10 @@ export default class Sidebar extends Vue {
   }
 
   renderPieChart = (containerId: string, data: any) => {
-    console.log('In renderPieCHart');
-    PieChart(containerId, data, { donutLabel: 'Total : 14', height: 500 });
+    PieChart(containerId, data, { donutLabel: 'Total : 14', height: 300 });
   };
 
-  graphData = [
+  pieChartData = [
     {
       name: 'Stations vélib',
       value: 12,
@@ -77,24 +84,61 @@ export default class Sidebar extends Vue {
       value: 5,
     },
     {
-      name: 'Accidents',
-      value: 10,
-    },
-    {
       name: 'Pistes cyclables',
       value: 15,
     },
+    {
+      name: 'Accidents',
+      value: 10,
+    },
+  ];
+
+  renderLineChart = (containerId: string, data: any) => {
+    lineChart(
+      containerId,
+      data,
+      ['Station 1', 'Station 2', 'Station 3'],
+      [d3.symbol().size(20), d3.symbol().size(20)],
+      ['#e76f51', '#2a9d8f', '#e9c46a'],
+      'Date',
+      'Nombre de cycliste par heure',
+      'Nombre de cycliste moyen par heure pour plusieurs compteurs parisiens',
+    );
+  };
+
+  lineChartData = [
+    [
+      [new Date('2022-01-01'), 8],
+      [new Date('2022-01-02'), 5],
+      [new Date('2022-01-03'), 6],
+      [new Date('2022-01-04'), 18],
+      [new Date('2022-01-05'), 15],
+      [new Date('2022-01-06'), 16],
+    ],
+    [
+      [new Date('2022-01-01'), 18],
+      [new Date('2022-01-02'), 15],
+      [new Date('2022-01-03'), 16],
+      [new Date('2022-01-04'), 28],
+      [new Date('2022-01-05'), 25],
+      [new Date('2022-01-06'), 26],
+    ],
+    [
+      [new Date('2022-01-01'), 28],
+      [new Date('2022-01-02'), 25],
+      [new Date('2022-01-03'), 26],
+    ],
   ];
 }
 </script>
 
 <style scoped>
 #sidebar {
-  width: 30%;
-  height: 90vh;
+  width: 35%;
+  height: 95vh;
   position: fixed;
   z-index: 1;
-  top: 5vh;
+  top: 2.5vh;
   right: 0;
   background-color: #ececec;
   overflow-x: hidden;
