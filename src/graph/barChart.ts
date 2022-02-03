@@ -1,6 +1,5 @@
 import * as d3 from 'd3';
 
-// TODO : fix weird bug with 2 subdatasets in data
 const barChart = (
   containerId: string,
   datasets: number[][],
