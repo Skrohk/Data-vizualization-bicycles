@@ -2,7 +2,7 @@
 node_modules
 /dist
 
-/public/data
+/public/original_data
 
 
 # local env files
