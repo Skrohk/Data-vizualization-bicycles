@@ -65,6 +65,10 @@ const geoMap = (containerId, datasets, width = 1100, height = 700) => {
     Tooltip.style('opacity', 0);
   };
 
+  const mouseclick = (e, d) => {
+    console.log(d);
+  };
+
   d3.select(`#${containerId}`)
     .select('svg')
     .selectAll('myCircles')
@@ -77,6 +81,7 @@ const geoMap = (containerId, datasets, width = 1100, height = 700) => {
     .on('mouseover', mouseover)
     .on('mousemove', mousemove)
     .on('mouseleave', mouseleave)
+    .on('click', mouseclick)
     .style('pointer-events', 'auto');
 
   d3.select(`#${containerId}`)
@@ -91,6 +96,7 @@ const geoMap = (containerId, datasets, width = 1100, height = 700) => {
     .on('mouseover', mouseover)
     .on('mousemove', mousemove)
     .on('mouseleave', mouseleave)
+    .on('click', mouseclick)
     .style('pointer-events', 'auto');
 
   function update() {

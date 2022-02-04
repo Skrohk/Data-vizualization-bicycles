@@ -6,22 +6,8 @@
         <img src="../../public/logo.png" alt="Logo" width="55" />
         <h1 class="text-4xl">BIKE THE WAY</h1>
       </div>
-      <!--      <h1 class="text-h1 font-bold">Visualisation du vélo ouais trop bien</h1>-->
-      <!--       <graph-->
-      <!--        :renderGraph="renderGraph"-->
-      <!--        :graphData="barChartData"-->
-      <!--        class="mt-10"-->
-      <!--      />-->
-      <!--      <button @click="onClick" class="border border-black p-1 bg-navy-500">-->
-      <!--        Add 5 years-->
-      <!--      </button>-->
-      <graph
-        :renderGraph="renderGeoMap"
-        :graphData="[]"
-        class="fullscreen-map"
-        :is-fullscreen="true"
-      />
-      <sidebar :stationId="stationId" />
+      <Map class="fullscreen-map" @STATION_SELECTED="onStationSelected"/>
+      <sidebar :stationId="stationId"/>
     </div>
   </main>
 </template>
@@ -31,11 +17,13 @@ import { Options, Vue } from 'vue-class-component';
 import Sidebar from '@/components/Sidebar.vue';
 import Graph from '@/components/Graph.vue';
 import barChart, { averageByContinent } from '@/graph/barChart';
+import Map from '@/components/Map.vue';
 import * as d3 from 'd3';
 import geoMap from '../graph/geoMap';
 
 @Options({
   components: {
+    Map,
     Sidebar,
     Graph,
   },
@@ -48,8 +36,6 @@ export default class Home extends Vue {
   year = 1952;
 
   rawData: any[] = [];
-
-  renderGeoMap = geoMap;
 
   stationId = '100006300-SC';
 
@@ -89,6 +75,12 @@ export default class Home extends Vue {
       this.barChartData = [data];
       this.barChartLabels = labels;
     }
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  onStationSelected(id: number): void {
+    this.stationId = id.toString();
+    console.log(id);
   }
 }
 </script>
