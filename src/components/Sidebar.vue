@@ -144,8 +144,8 @@ export default class Sidebar extends Vue {
     this.lineChartStations = [jsonFile.nom];
 
     jsonFile.data.sort((d1: { d: string }, d2: { d: string }) => {
-      const date1 = new Date(`${d1.d}:00`);
-      const date2 = new Date(`${d2.d}:00`);
+      const date1 = new Date(`${d1.d.replace(':', 'T')}:00:00`);
+      const date2 = new Date(`${d2.d.replace(':', 'T')}:00:00`);
       if (date1 > date2) return -1;
       if (date2 > date1) return 1;
       return 0;
@@ -153,7 +153,7 @@ export default class Sidebar extends Vue {
     return [
       computeMovingAverage(
         jsonFile.data.map((d: { d: string; s: number }) => [
-          new Date(`${d.d}:00`),
+          new Date(`${d.d.replace(':', 'T')}:00:00`),
           d.s,
         ]),
         20,
@@ -165,13 +165,13 @@ export default class Sidebar extends Vue {
     this.lineChartData = await this.fetchAndFormatData();
   }
 
-  // eslint-disable-next-line
-  // async updated(): Promise<void> {
-  //   console.log('Updated ! ');
-  //   setTimeout()
-  //   this.lineChartStations = ['testUupdate'];
-  //   // await this.fetchAndFormatData();
-  // }
+  previousStationId?: string = undefined;
+
+  async updated(): Promise<void> {
+    if (this.previousStationId === this.stationId) return;
+    this.previousStationId = this.stationId;
+    this.lineChartData = await this.fetchAndFormatData();
+  }
 
   lineChartData: any[] = [];
 }
