@@ -88,14 +88,11 @@ export default class Map extends Vue {
       .style('position', 'fixed')
       .style('z-index', 2000);
 
-    const mouseover = () => {
+    const mouseover = (e, d) => {
       Tooltip.style('opacity', 1);
-    };
-
-    const mousemove = (e, d) => {
       Tooltip.html(d.name)
-        .style('left', `${map.latLngToLayerPoint([d.lat, d.long]).x}px`)
-        .style('top', `${map.latLngToLayerPoint([d.lat, d.long]).y}px`);
+        .style('left', `${e.pageX + 10}px`)
+        .style('top', `${e.pageY - 15}px`);
     };
 
     const mouseleave = () => {
@@ -108,33 +105,33 @@ export default class Map extends Vue {
 
     d3.select('#map-id')
       .select('svg')
-      .selectAll('myCircles')
+      .selectAll('.station')
       .data(stations)
       .join('circle')
+      .attr('class', 'station')
       .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
       .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
       .attr('r', 4)
       .style('fill', '#2a9d8f')
       .on('mouseover', mouseover)
-      .on('mousemove', mousemove)
       .on('mouseleave', mouseleave)
-      .on('click', mouseclick)
       .style('pointer-events', 'auto');
 
     d3.select('#map-id')
       .select('svg')
-      .selectAll('myCircles')
+      .selectAll('.counter')
       .data(counters)
       .join('circle')
+      .attr('class', 'counter')
       .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
       .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
       .attr('r', 4)
       .style('fill', '#e76f51')
       .on('mouseover', mouseover)
-      .on('mousemove', mousemove)
       .on('mouseleave', mouseleave)
       .on('click', mouseclick)
-      .style('pointer-events', 'auto');
+      .style('pointer-events', 'auto')
+      .style('cursor', 'pointer');
 
     function update() {
       d3.selectAll('circle')
@@ -147,5 +144,4 @@ export default class Map extends Vue {
 }
 </script>
 <style scoped>
-
 </style>
