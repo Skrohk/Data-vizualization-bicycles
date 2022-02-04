@@ -1,5 +1,7 @@
 # data-viz
 
+Website available here : [here](https://bike-the-way.netlify.app/)
+
 ## Project setup
 ```
 npm install
