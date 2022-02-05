@@ -33,6 +33,8 @@ import L from 'leaflet';
 import * as d3 from 'd3';
 import dataCounter from '../../public/data/comptage-velo-compteurs.json';
 import dataStation from '../../public/data/velib-emplacement-des-stations.json';
+import dataDangerousPoints from '../../public/data/75056-points.json';
+import dataSegments from '../../public/data/75056-troncons.json';
 
 @Options({
   emits: ['STATION_SELECTED'],
@@ -118,6 +120,9 @@ export default class Map extends Vue {
 
     const mouseover = (e, d) => {
       Tooltip.style('opacity', 1);
+    };
+
+    const mousemove = (e, d) => {
       Tooltip.html(d.name)
         .style('left', `${e.pageX + 10}px`)
         .style('top', `${e.pageY - 15}px`);
@@ -188,6 +193,11 @@ export default class Map extends Vue {
     } else {
       d3.selectAll('.station').remove();
     }
+
+    map.on('moveend', update);
   }
 }
 </script>
+<style scoped>
+
+</style>
