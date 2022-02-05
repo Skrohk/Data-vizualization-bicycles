@@ -80,7 +80,6 @@ export default class Home extends Vue {
   // eslint-disable-next-line class-methods-use-this
   onStationSelected(id: number): void {
     this.stationId = id.toString();
-    console.log(id);
   }
 }
 </script>

@@ -9,6 +9,8 @@ import L from 'leaflet';
 import * as d3 from 'd3';
 import dataCounter from '../../public/data/comptage-velo-compteurs.json';
 import dataStation from '../../public/data/velib-emplacement-des-stations.json';
+import dataDangerousPoints from '../../public/data/75056-points.json';
+import dataSegments from '../../public/data/75056-troncons.json';
 
 @Options({
   emits: ['STATION_SELECTED'],
@@ -75,6 +77,17 @@ export default class Map extends Vue {
       id: localisation.fields.id_compteur,
     }));
 
+    const dangerousPoint = dataDangerousPoints.features.map((localisation) => ({
+      long: localisation.geometry.coordinates[0],
+      lat: localisation.geometry.coordinates[1],
+    }));
+
+    const segments = dataSegments.features.map((segment) => ({
+      coordinates: segment.geometry.coordinates,
+      name: segment.properties.nom,
+      contribute: segment.properties.contribution,
+    }));
+
     const Tooltip = d3
       .select('#map-id')
       .append('div')
@@ -129,7 +142,33 @@ export default class Map extends Vue {
       .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
       .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
       .attr('r', 4)
-      .style('fill', '#e76f51')
+      .style('fill', '#51a4e7')
+      .on('mouseover', mouseover)
+      .on('mousemove', mousemove)
+      .on('mouseleave', mouseleave)
+      .on('click', mouseclick)
+      .style('pointer-events', 'auto');
+
+    d3.select('#map-id')
+      .select('svg')
+      .selectAll('myCircles')
+      .data(dangerousPoint)
+      .join('circle')
+      .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
+      .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
+      .attr('r', 2)
+      .style('fill', '#e75151')
+      .on('mouseover', mouseover)
+      .on('mousemove', mousemove)
+      .on('mouseleave', mouseleave)
+      .on('click', mouseclick)
+      .style('pointer-events', 'auto');
+
+    d3.select('#map-id')
+      .select('svg')
+      .selectAll('myCircles')
+      .data(segments)
+      .join('path')
       .on('mouseover', mouseover)
       .on('mousemove', mousemove)
       .on('mouseleave', mouseleave)
