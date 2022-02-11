@@ -6,8 +6,8 @@
         <img src="../../public/logo.png" alt="Logo" width="55" />
         <h1 class="text-4xl">BIKE THE WAY</h1>
       </div>
-      <Map class="fullscreen-map" @STATION_SELECTED="onStationSelected"/>
-      <sidebar :stationId="stationId"/>
+      <Map class="fullscreen-map" @STATION_SELECTED="onStationSelected" />
+      <sidebar :stationId="stationId" />
     </div>
   </main>
 </template>
@@ -19,7 +19,6 @@ import Graph from '@/components/Graph.vue';
 import barChart, { averageByContinent } from '@/graph/barChart';
 import Map from '@/components/Map.vue';
 import * as d3 from 'd3';
-import geoMap from '../graph/geoMap';
 
 @Options({
   components: {
