@@ -1,5 +1,5 @@
 <template>
-  <div id="map-id" :key="graphData"></div>
+  <div id="map-id"></div>
 </template>
 
 <script lang="js">
