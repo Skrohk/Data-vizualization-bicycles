@@ -44,16 +44,21 @@
         />
         <h3>Compteur</h3>
         <div class="my-2">
-          <div
-            class="flex flex-row items-center"
-            v-for="(_, index) in lineChartData"
-            :key="index"
-          >
+          <div class="flex flex-row items-center justify-between">
             <div
-              class="h-1 w-1 rounded-full mr-0.5"
-              :style="`background-color: ${lineChartColors[index]}`"
-            ></div>
-            <p>{{ lineChartStations[index] }}</p>
+              class="flex flex-row items-center"
+              v-for="(_, index) in lineChartData"
+              :key="index"
+            >
+              <div
+                class="h-1 w-1 rounded-full mr-0.5"
+                :style="`background-color: ${lineChartColors[index]}`"
+              ></div>
+              <p>{{ lineChartStations[index] }}</p>
+            </div>
+            <button @click="resetLineChartView" title="Reset to original view">
+              <font-awesome-icon :icon="['fas', 'expand']" />
+            </button>
           </div>
           <graph
             :renderGraph="renderLineChart"
@@ -74,9 +79,6 @@
 import { Options, Vue } from 'vue-class-component';
 import PieChart from '@/graph/piechart';
 import lineChart, { computeMovingAverage } from '@/graph/lineChart';
-import * as d3 from 'd3';
-// eslint-disable-next-line
-import { watch } from '@vue/runtime-core';
 import Graph from './Graph.vue';
 
 @Options({
@@ -123,16 +125,17 @@ export default class Sidebar extends Vue {
 
   lineChartStations: string[] = [];
 
+  // Need to initalize it not a defined value for it to work
+  // eslint-disable-next-line
+  resetLineChartView?: () => void = () => {};
+
   renderLineChart = (containerId: string, data: any) => {
-    lineChart(
+    this.resetLineChartView = lineChart(
       containerId,
       data,
-      this.lineChartStations,
-      [d3.symbol().size(20), d3.symbol().size(20)],
       this.lineChartColors,
       'Date',
       'Nombre de cyclistes par heure',
-      'Nombre de cycliste moyen par heure pour plusieurs compteurs parisiens',
     );
   };
 

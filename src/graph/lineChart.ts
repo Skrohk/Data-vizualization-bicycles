@@ -3,12 +3,9 @@ import * as d3 from 'd3';
 const lineChart = (
   containerId: string,
   datasets: [number, number][][],
-  legend: string[],
-  symbols: any[],
   colors: string[],
   xLabel = '',
   yLabel = '',
-  title = '',
   width = 475,
   height = 300,
 ) => {
@@ -25,17 +22,18 @@ const lineChart = (
 
   const legendWidth = 0;
 
-  const domainMax = d3.max(datasets, (d1) => d3.max(d1, (d2) => d2[0] as any));
-  const domainMin = d3.min(datasets, (d1) => d3.min(d1, (d2) => d2[0] as any));
+  const xDomainMax = d3.max(datasets, (d1) => d3.max(d1, (d2) => d2[0] as any));
+  const xDomainMin = d3.min(datasets, (d1) => d3.min(d1, (d2) => d2[0] as any));
+  const yDomainMax = d3.max(datasets, (d1) => d3.max(d1, (d2) => d2[1] as any));
 
   const xScale = d3
     .scaleTime()
-    .domain([domainMax, domainMin])
+    .domain([xDomainMax, xDomainMin])
     .range([width - xPadding - legendWidth, xPadding]);
 
   const yScale = d3
     .scaleLinear()
-    .domain([0, d3.max(datasets, (d1) => d3.max(d1, (d2) => d2[1] as any))])
+    .domain([0, yDomainMax])
     .range([height - yPadding, yPadding]);
 
   const svg = container
@@ -48,52 +46,22 @@ const lineChart = (
     .attr('height', height);
 
   const xAxis = (g: any) => {
-    g.attr('transform', `translate(0, ${height - yPadding})`).call(d3.axisBottom(xScale));
+    g.attr('transform', `translate(0, ${height - yPadding})`).call(d3.axisBottom(xScale).ticks(6));
   };
-  // .tickFormat(d3.timeFormat('%b') as any)
 
   const yAxis = (g: any) => {
     g.attr('transform', `translate(${xPadding}, 0)`).call(d3.axisLeft(yScale));
   };
   svg.append('g').attr('class', 'xAxis').call(xAxis);
-  svg.append('g').call(yAxis);
+  svg.append('g').attr('class', 'yAxis').call(yAxis);
 
   const scatter = svg.append('g').attr('clip-path', 'url(#clip)');
 
-  const updateChart = (event: any) => {
-    if (!event.mode) return;
-    console.log('Event : ', event);
-    const extent = event.selection;
-
-    // If no selection, back to initial coordinate. Otherwise, update X axis domain
-    if (!extent) {
-      console.log('No selection');
-      xScale.domain([domainMax, domainMin]);
-    } else {
-      xScale.domain([xScale.invert(extent[1]), xScale.invert(extent[0])]);
-      // eslint-disable-next-line
-      svg.select('.brush').call(brush.move as any, null); // This remove the grey brush area as soon as the selection has been done
-    }
-
-    // Update axis and circle position
-    svg.select('.xAxis').transition().duration(1000).call(xAxis);
+  const actualiseDrawing = () => {
+    svg.select('.xAxis').transition().duration(500).call(xAxis);
+    svg.select('.yAxis').transition().duration(500).call(yAxis);
 
     datasets.forEach((subDataset, index) => {
-      // scatter
-      //   .selectAll(`.line-${index}`)
-      //   .data([subDataset])
-      //   .enter()
-      //   .append('path')
-      //   .attr('fill', 'none')
-      //   .attr('stroke', colors[index])
-      //   .attr('stroke-width', 1.5)
-      //   .attr(
-      //     'd',
-      //     d3
-      //       .line()
-      //       .x((d) => xScale(d[0]))
-      //       .y((d) => yScale(d[1])),
-      //   );
       scatter
         .select(`.line-${index}`)
         .datum(subDataset)
@@ -107,11 +75,42 @@ const lineChart = (
     });
   };
 
+  const resetView = () => {
+    xScale.domain([xDomainMax, xDomainMin]);
+    yScale.domain([0, yDomainMax]);
+    actualiseDrawing();
+  };
+
+  const updateChart = (event: any) => {
+    if (!event.mode) return;
+    const extent = event.selection;
+
+    if (!extent) {
+      xScale.domain([xDomainMax, xDomainMin]);
+      yScale.domain([0, yDomainMax]);
+    } else {
+      const [xMinSelection, yMaxSelection] = extent[0];
+      const [xMaxSelection, yMinSelection] = extent[1];
+
+      const xMin = xScale.invert(xMinSelection);
+      const yMin = yScale.invert(yMinSelection);
+      const xMax = xScale.invert(xMaxSelection);
+      const yMax = yScale.invert(yMaxSelection);
+
+      xScale.domain([xMax, xMin]);
+      yScale.domain([yMin, yMax]);
+      // eslint-disable-next-line
+      svg.select('.brush').call(brush.move as any, null); // This remove the grey brush area as soon as the selection has been done
+    }
+
+    actualiseDrawing();
+  };
+
   const brush = d3
-    .brushX()
+    .brush()
     .extent([
-      [0, 0],
-      [width, height],
+      [xPadding, yPadding],
+      [width - xPadding - legendWidth, height - yPadding],
     ])
     .on('end', updateChart);
 
@@ -120,10 +119,10 @@ const lineChart = (
     .append('svg:clipPath')
     .attr('id', 'clip')
     .append('svg:rect')
-    .attr('width', width - xPadding - legendWidth)
-    .attr('height', height)
+    .attr('width', width - 2 * xPadding - legendWidth)
+    .attr('height', height - 2 * yPadding)
     .attr('x', xPadding)
-    .attr('y', 0);
+    .attr('y', yPadding);
 
   scatter
     .append('g')
@@ -144,22 +143,8 @@ const lineChart = (
           .line()
           .x((d) => xScale(d[0]))
           .y((d) => yScale(d[1])),
-      );
-    // scatter
-    //   .selectAll(`.line-${index}`)
-    //   .data([subDataset])
-    //   .enter()
-    //   .append('path')
-    //   .attr('fill', 'none')
-    //   .attr('stroke', colors[index])
-    //   .attr('stroke-width', 1.5)
-    //   .attr(
-    //     'd',
-    //     d3
-    //       .line()
-    //       .x((d) => xScale(d[0]))
-    //       .y((d) => yScale(d[1])),
-    //   );
+      )
+      .attr('pointer-events', 'none');
   });
 
   svg
@@ -176,6 +161,8 @@ const lineChart = (
     .attr('x', width / 2)
     .attr('y', height - yPadding / 3)
     .text(xLabel);
+
+  return resetView;
 };
 
 const getAverage = (data: [Date, number][]) =>
