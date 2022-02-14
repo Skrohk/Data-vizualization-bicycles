@@ -16,9 +16,7 @@
 import { Options, Vue } from 'vue-class-component';
 import Sidebar from '@/components/Sidebar.vue';
 import Graph from '@/components/Graph.vue';
-import barChart, { averageByContinent } from '@/graph/barChart';
 import Map from '@/components/Map.vue';
-import * as d3 from 'd3';
 
 @Options({
   components: {
@@ -28,58 +26,11 @@ import * as d3 from 'd3';
   },
 })
 export default class Home extends Vue {
-  barChartData: number[][] = [];
-
-  barChartLabels: string[] = [];
-
-  year = 1952;
-
-  rawData: any[] = [];
-
   stationId = '100006300-SC';
-
-  async created(): Promise<void> {
-    this.rawData = await d3.csv(
-      'https://raw.githubusercontent.com/romsson/visualisation-interactive/main/datasets/gapminder.csv',
-    );
-
-    const { data, labels } = averageByContinent(
-      this.rawData,
-      this.year,
-      'lifeExp',
-    );
-    this.barChartData = [data];
-    this.barChartLabels = labels;
-  }
-
-  renderGraph(containerId: string, data: any) {
-    barChart(
-      containerId,
-      data,
-      'Continent',
-      'Espérance de vie',
-      `Espérance de vie moyenne par continent en ${this.year}`,
-      this.barChartLabels,
-    );
-  }
-
-  onClick() {
-    if (this.year < 2007) {
-      this.year += 5;
-      const { data, labels } = averageByContinent(
-        this.rawData,
-        this.year,
-        'lifeExp',
-      );
-      this.barChartData = [data];
-      this.barChartLabels = labels;
-    }
-  }
 
   // eslint-disable-next-line class-methods-use-this
   onStationSelected(id: number): void {
     this.stationId = id.toString();
-    console.log(id);
   }
 }
 </script>
