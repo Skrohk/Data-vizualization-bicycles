@@ -57,7 +57,7 @@
               <p>{{ lineChartStations[index] }}</p>
             </div>
             <button @click="resetLineChartView" title="Reset to original view">
-              <font-awesome-icon :icon="['fas', 'expand']" />
+              <font-awesome-icon :icon="['fas', 'expand']" class="text-large" />
             </button>
           </div>
           <graph
