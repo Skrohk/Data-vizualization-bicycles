@@ -11,16 +11,22 @@
     "
     style="z-index: 5000; width: 150px"
   >
-    <div class="flex flex-row items-center">
-      <div class="h-1 w-1 rounded-full bg-red-500 mr-0.5" />
-      <p>Compteur</p>
+    <div class="legend-item">
+      <div class="marker counters" />
+      <p class="label">Compteur</p>
       <input type="checkbox" class="ml-1" v-model="areCountersDisplayed" />
     </div>
 
-    <div class="flex flex-row items-center">
-      <div class="h-1 w-1 rounded-full bg-green-700 mr-0.5" />
-      <p>Station Vélib</p>
+    <div class="legend-item">
+      <div class="marker stations" />
+      <p class="label">Station Vélib</p>
       <input type="checkbox" class="ml-1" v-model="areStationsDisplayed" />
+    </div>
+
+    <div class="legend-item">
+      <div class="marker conflict-points" />
+      <p class="label">Zone de conflit</p>
+      <input type="checkbox" class="ml-1" v-model="areConflictPointsDisplayed" />
     </div>
   </div>
   <div id="map-id" class="absolute top-0 left-0 w-screen h-screen"></div>
@@ -44,9 +50,11 @@ export default class Map extends Vue {
 
   sizeY = 0;
 
-  areCountersDisplayed = true
+  areCountersDisplayed = true;
 
-  areStationsDisplayed = true
+  areStationsDisplayed = true;
+
+  areConflictPointsDisplayed = true;
 
   map = undefined;
 
@@ -119,11 +127,8 @@ export default class Map extends Vue {
       .style('opacity', 0);
 
     const mouseover = (e, d) => {
-      Tooltip.style('opacity', 1);
-    };
-
-    const mousemove = (e, d) => {
       Tooltip.html(d.name)
+        .style('opacity', 1)
         .style('left', `${e.pageX + 10}px`)
         .style('top', `${e.pageY - 15}px`);
     };
@@ -138,6 +143,7 @@ export default class Map extends Vue {
 
     this.displayStations(mouseover, mouseleave);
     this.displayCounters(mouseover, mouseleave, mouseclick);
+    this.displayConflictPoints();
   }
 
   displayCounters(mouseover, mouseleave, mouseclick) {
@@ -193,11 +199,58 @@ export default class Map extends Vue {
     } else {
       d3.selectAll('.station').remove();
     }
+  }
 
-    map.on('moveend', update);
+  displayConflictPoints() {
+    if (this.areConflictPointsDisplayed) {
+      const dangerousPoint = dataDangerousPoints.features.map((localisation) => ({
+        long: localisation.geometry.coordinates[0],
+        lat: localisation.geometry.coordinates[1],
+      }));
+
+      d3.select('#map-id')
+        .select('svg')
+        .selectAll('.dangerous-point')
+        .data(dangerousPoint)
+        .join('circle')
+        .attr('class', 'dangerous-point')
+        .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
+        .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y)
+        .attr('r', 4)
+        .style('fill', '#e75151')
+        .style('pointer-events', 'auto');
+    } else {
+      d3.selectAll('.dangerous-point').remove();
+    }
   }
 }
 </script>
 <style scoped>
+.marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
 
+.conflict-points {
+  background-color: #e75151;
+}
+
+.counters {
+  background-color: #e76f51;
+}
+
+.stations {
+  background-color: #2a9d8f;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.label {
+  text-align: center;
+}
 </style>
