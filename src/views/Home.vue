@@ -6,7 +6,7 @@
         <img src="../../public/logo.png" alt="Logo" width="55" />
         <h1 class="text-4xl">BIKE THE WAY</h1>
       </div>
-      <Map class="fullscreen-map" @STATION_SELECTED="onStationSelected" />
+      <Map @STATION_SELECTED="onStationSelected" />
       <sidebar :stationId="stationId" />
     </div>
   </main>
@@ -53,13 +53,6 @@ export default class Home extends Vue {
       format('svg');
 }
 
-.fullscreen-map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
 #header {
   position: fixed;
   z-index: 1000;

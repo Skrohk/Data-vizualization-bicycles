@@ -1,5 +1,29 @@
 <template>
-  <div id="map-id"></div>
+  <div
+    class="
+      p-1
+      absolute
+      bottom-11
+      left-1.5
+      bg-white
+      border border-black
+      flex flex-col
+    "
+    style="z-index: 5000; width: 150px"
+  >
+    <div class="flex flex-row items-center">
+      <div class="h-1 w-1 rounded-full bg-red-500 mr-0.5" />
+      <p>Compteur</p>
+      <input type="checkbox" class="ml-1" v-model="areCountersDisplayed" />
+    </div>
+
+    <div class="flex flex-row items-center">
+      <div class="h-1 w-1 rounded-full bg-green-700 mr-0.5" />
+      <p>Station Vélib</p>
+      <input type="checkbox" class="ml-1" v-model="areStationsDisplayed" />
+    </div>
+  </div>
+  <div id="map-id" class="absolute top-0 left-0 w-screen h-screen"></div>
 </template>
 
 <script lang="js">
@@ -18,12 +42,19 @@ export default class Map extends Vue {
 
   sizeY = 0;
 
+  areCountersDisplayed = true
+
+  areStationsDisplayed = true
+
+  map = undefined;
+
   async mounted() {
-    await this.geoMap(this.sizeX, this.sizeY);
+    this.initMap();
+    this.geoMap();
   }
 
   async updated() {
-    await this.geoMap(this.sizeX, this.sizeY);
+    this.geoMap();
   }
 
   async created() {
@@ -40,9 +71,8 @@ export default class Map extends Vue {
     this.sizeY = window.innerHeight;
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  geoMap() {
-    const map = L.map('map-id', { zoomControl: false }).setView([48.86, 2.37], 13);
+  initMap() {
+    this.map = L.map('map-id', { zoomControl: false }).setView([48.86, 2.37], 13);
 
     L.tileLayer(
       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw',
@@ -56,25 +86,22 @@ export default class Map extends Vue {
         accessToken:
           'pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw',
       },
-    ).addTo(map);
+    ).addTo(this.map);
 
-    map.addControl(L.control.zoom({ position: 'bottomleft' }));
+    this.map.addControl(L.control.zoom({ position: 'bottomleft' }));
 
-    L.svg({ clickable: true }).addTo(map);
+    L.svg({ clickable: true }).addTo(this.map);
 
-    const stations = dataStation.map((localisation) => ({
-      long: localisation.fields.coordonnees_geo[1],
-      lat: localisation.fields.coordonnees_geo[0],
-      name: localisation.fields.name,
-    }));
+    const update = () => {
+      d3.selectAll('circle')
+        .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
+        .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y);
+    };
 
-    const counters = dataCounter.map((localisation) => ({
-      long: localisation.fields.coordinates[1],
-      lat: localisation.fields.coordinates[0],
-      name: localisation.fields.nom_compteur,
-      id: localisation.fields.id_compteur,
-    }));
+    this.map.on('moveend', update);
+  }
 
+  geoMap() {
     const Tooltip = d3
       .select('#map-id')
       .append('div')
@@ -86,7 +113,8 @@ export default class Map extends Vue {
       .style('border-radius', '5px')
       .style('padding', '5px')
       .style('position', 'fixed')
-      .style('z-index', 2000);
+      .style('z-index', 2000)
+      .style('opacity', 0);
 
     const mouseover = (e, d) => {
       Tooltip.style('opacity', 1);
@@ -103,45 +131,63 @@ export default class Map extends Vue {
       this.$emit('STATION_SELECTED', d.id);
     };
 
-    d3.select('#map-id')
-      .select('svg')
-      .selectAll('.station')
-      .data(stations)
-      .join('circle')
-      .attr('class', 'station')
-      .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
-      .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
-      .attr('r', 4)
-      .style('fill', '#2a9d8f')
-      .on('mouseover', mouseover)
-      .on('mouseleave', mouseleave)
-      .style('pointer-events', 'auto');
+    this.displayStations(mouseover, mouseleave);
+    this.displayCounters(mouseover, mouseleave, mouseclick);
+  }
 
-    d3.select('#map-id')
-      .select('svg')
-      .selectAll('.counter')
-      .data(counters)
-      .join('circle')
-      .attr('class', 'counter')
-      .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
-      .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y)
-      .attr('r', 4)
-      .style('fill', '#e76f51')
-      .on('mouseover', mouseover)
-      .on('mouseleave', mouseleave)
-      .on('click', mouseclick)
-      .style('pointer-events', 'auto')
-      .style('cursor', 'pointer');
+  displayCounters(mouseover, mouseleave, mouseclick) {
+    if (this.areCountersDisplayed) {
+      const counters = dataCounter.map((localisation) => ({
+        long: localisation.fields.coordinates[1],
+        lat: localisation.fields.coordinates[0],
+        name: localisation.fields.nom_compteur,
+        id: localisation.fields.id_compteur,
+      }));
 
-    function update() {
-      d3.selectAll('circle')
-        .attr('cx', (d) => map.latLngToLayerPoint([d.lat, d.long]).x)
-        .attr('cy', (d) => map.latLngToLayerPoint([d.lat, d.long]).y);
+      d3.select('#map-id')
+        .select('svg')
+        .selectAll('.counter')
+        .data(counters)
+        .join('circle')
+        .attr('class', 'counter')
+        .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
+        .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y)
+        .attr('r', 4)
+        .style('fill', '#e76f51')
+        .on('mouseover', mouseover)
+        .on('mouseleave', mouseleave)
+        .on('click', mouseclick)
+        .style('pointer-events', 'auto')
+        .style('cursor', 'pointer');
+    } else {
+      d3.selectAll('.counter').remove();
     }
+  }
 
-    map.on('moveend', update);
+  displayStations(mouseover, mouseleave) {
+    if (this.areStationsDisplayed) {
+      const stations = dataStation.map((localisation) => ({
+        long: localisation.fields.coordonnees_geo[1],
+        lat: localisation.fields.coordonnees_geo[0],
+        name: localisation.fields.name,
+      }));
+
+      d3.select('#map-id')
+        .select('svg')
+        .selectAll('.station')
+        .data(stations)
+        .join('circle')
+        .attr('class', 'station')
+        .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
+        .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y)
+        .attr('r', 4)
+        .style('fill', '#2a9d8f')
+        .on('mouseover', mouseover)
+        .on('mouseleave', mouseleave)
+        .style('pointer-events', 'auto');
+    } else {
+      d3.selectAll('.station').remove();
+    }
   }
 }
 </script>
-<style scoped>
-</style>
