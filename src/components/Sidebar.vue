@@ -17,18 +17,32 @@
     "
     :class="isOpen ? 'translate-x-0' : 'moved'"
   >
-    <button
-      @click="close"
-      class="bg-gray-400 hover:bg-gray-500 text-white font-bold"
-      id="close-button"
-    >
-      <font-awesome-icon :icon="['fas', 'times']" v-if="isOpen" />
-      <font-awesome-icon :icon="['fas', 'angle-double-left']" v-else />
-    </button>
+    <div id="sidebar-header">
+      <button
+        @click="close"
+        class="bg-gray-400 hover:bg-gray-500 text-white font-bold"
+        id="close-button"
+      >
+        <font-awesome-icon :icon="['fas', 'times']" v-if="isOpen" />
+        <font-awesome-icon :icon="['fas', 'angle-double-left']" v-else />
+      </button>
+      <h2>Informations</h2>
+    </div>
     <div id="sidebar-container">
       <div>
-        <h2>Informations</h2>
-        <h3>Note de cyclabilité de l'arrondissement</h3>
+        <h3>
+          <label for="pet-select">Note de cyclabilité du </label>
+          <select name="pets" id="pet-select">
+            <option
+              v-for="(district, index) in districtList"
+              :value="index + 1"
+              :key="index + 1"
+              :selected="index + 1 === districtId"
+            >
+              {{district}}
+            </option>
+          </select>
+        </h3>
         <graph
           :renderGraph="renderPieChart"
           :graphData="pieChartData"
@@ -80,12 +94,18 @@ import Graph from './Graph.vue';
   },
   props: {
     stationId: String,
+    districtId: Number,
   },
 })
 export default class Sidebar extends Vue {
   isOpen = true;
 
   stationId!: string;
+
+  districtList = ['1er arrondissement'].concat(
+    // eslint-disable-next-line prefer-spread
+    Array.apply(null, Array(19)).map((x, i) => `${i + 1} ème arrondissement`),
+  );
 
   close(): void {
     this.isOpen = !this.isOpen;
@@ -205,10 +225,16 @@ h2 {
   font-family: 'Zen Kurenaido', sans-serif;
   font-size: 1.5rem;
   font-variant: small-caps;
+  margin-left: 20px;
 }
 h3 {
   font-family: 'Zen Kurenaido', sans-serif;
   font-size: 1rem;
   font-variant: small-caps;
+}
+#sidebar-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 </style>

@@ -47,9 +47,10 @@ import dataCounter from '../../public/data/comptage-velo-compteurs.json';
 import dataStation from '../../public/data/velib-emplacement-des-stations.json';
 import dataDangerousPoints from '../../public/data/75056-points.json';
 import dataSegments from '../../public/data/75056-troncons-filtered.json';
+import dataDistricts from '../../public/data/arrondissements.json';
 
 @Options({
-  emits: ['STATION_SELECTED'],
+  emits: ['STATION_SELECTED', 'DISTRICT_SELECTED'],
 })
 export default class Map extends Vue {
   sizeX = 0;
@@ -65,6 +66,8 @@ export default class Map extends Vue {
   areSegmentDisplayed = true;
 
   map = undefined;
+
+  district = undefined;
 
   segmentColorScale = d3
     .scaleSequentialLog()
@@ -115,32 +118,43 @@ export default class Map extends Vue {
 
     L.svg({ clickable: true }).addTo(this.map);
 
-    const update = () => {
-      d3.selectAll('circle')
-        .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
-        .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y);
+    this.map.on('moveend', this.update);
 
-      // Use d3's custom geo transform method to implement the above
-      const thisMap = this.map;
-      function projectPoint(x, y) {
-        const point = thisMap.latLngToLayerPoint(new L.LatLng(y, x));
-        this.stream.point(point.x, point.y);
+    this.district = dataDistricts.features;
+  }
+
+  update() {
+    const coordinatesObject = this.map.getCenter();
+    const coordinates = [coordinatesObject.lng, coordinatesObject.lat];
+
+    this.district.forEach((district) => {
+      if (d3.geoContains(district, coordinates)) {
+        console.log(district.properties.c_ar);
+        this.$emit('DISTRICT_SELECTED', district.properties.c_ar);
       }
+    });
 
-      const projection = d3.geoTransform({
-        point: projectPoint,
-      });
+    d3.selectAll('circle')
+      .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
+      .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y);
 
-      // creates geopath from projected points (SVG)
-      const pathCreator = d3.geoPath().projection(projection);
+    // Use d3's custom geo transform method to implement the above
+    const thisMap = this.map;
+    function projectPoint(x, y) {
+      const point = thisMap.latLngToLayerPoint(new L.LatLng(y, x));
+      this.stream.point(point.x, point.y);
+    }
 
-      d3.select('#map-id')
-        .selectAll('path')
-        .attr('d', pathCreator);
-    };
+    const projection = d3.geoTransform({
+      point: projectPoint,
+    });
 
-    update();
-    this.map.on('moveend', update);
+    // creates geopath from projected points (SVG)
+    const pathCreator = d3.geoPath().projection(projection);
+
+    d3.select('#map-id')
+      .selectAll('path')
+      .attr('d', pathCreator);
   }
 
   geoMap() {
@@ -271,8 +285,10 @@ export default class Map extends Vue {
         .attr('stroke-width', 2)
         .on('mouseover', (e, d) => mouseover(e, { name: d.name }))
         .on('mouseleave', mouseleave);
+
+      this.update();
     } else {
-      d3.selectAll('.segments').remove();
+      d3.select('#map-id').selectAll('path').remove();
     }
   }
 }

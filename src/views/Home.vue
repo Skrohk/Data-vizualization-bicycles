@@ -6,8 +6,8 @@
         <img src="../../public/logo.png" alt="Logo" width="55" />
         <h1 class="text-4xl">BIKE THE WAY</h1>
       </div>
-      <Map @STATION_SELECTED="onStationSelected" />
-      <sidebar :stationId="stationId" />
+      <Map @STATION_SELECTED="onStationSelected" @DISTRICT_SELECTED="onDistrictSelected"/>
+      <sidebar :stationId="stationId" :districtId="districtId"/>
     </div>
   </main>
 </template>
@@ -28,9 +28,15 @@ import Map from '@/components/Map.vue';
 export default class Home extends Vue {
   stationId = '100006300-SC';
 
+  districtId = 1;
+
   // eslint-disable-next-line class-methods-use-this
   onStationSelected(id: number): void {
     this.stationId = id.toString();
+  }
+
+  onDistrictSelected(district: number): void {
+    this.districtId = district;
   }
 }
 </script>

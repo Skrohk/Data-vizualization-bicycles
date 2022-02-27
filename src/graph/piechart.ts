@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 // Copyright 2021 Observable, Inc.
 // Released under the ISC license.
 // https://observablehq.com/@d3/pie-chart
+
 function PieChart(
   containerId: string,
   data: { name: string; value: number }[],
