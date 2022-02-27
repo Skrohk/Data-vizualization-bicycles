@@ -63,6 +63,22 @@ const fetchAPI = async (listStation) => {
   }
 };
 
-const stationList = listEveryStation();
+const filterSegments = async (filter) => {
+  const data = JSON.parse(fs.readFileSync('./75056-troncons.json', 'utf8'));
+  console.log('Nombre de troncons avant filtrage : ', data.features.length);
+  data.features = data.features
+    .filter((segment) => parseInt(segment.properties.contributions, 10) >= filter)
+    .map((segment) => {
+      const obj = segment;
+      delete obj.id;
+      return obj;
+    });
+  console.log('Nombre de troncons après filtrage : ', data.features.length);
+  fs.writeFileSync('./75056-troncons-filtered.json', JSON.stringify(data), 'utf8');
+};
+
+// const stationList = listEveryStation();
 // fetchAPI(stationList).then(() => parseData(stationList));
-parseData(stationList);
+// parseData(stationList);
+
+filterSegments(2);

@@ -28,6 +28,12 @@
       <p class="label">Zone de conflit</p>
       <input type="checkbox" class="ml-1" v-model="areConflictPointsDisplayed" />
     </div>
+
+    <div class="legend-item">
+      <div class="marker segments" >-</div>
+      <p class="label">Tronçon à améliorer</p>
+      <input type="checkbox" class="ml-1" v-model="areSegmentDisplayed" />
+    </div>
   </div>
   <div id="map-id" class="absolute top-0 left-0 w-screen h-screen"></div>
 </template>
@@ -40,7 +46,7 @@ import * as d3 from 'd3';
 import dataCounter from '../../public/data/comptage-velo-compteurs.json';
 import dataStation from '../../public/data/velib-emplacement-des-stations.json';
 import dataDangerousPoints from '../../public/data/75056-points.json';
-import dataSegments from '../../public/data/75056-troncons.json';
+import dataSegments from '../../public/data/75056-troncons-filtered.json';
 
 @Options({
   emits: ['STATION_SELECTED'],
@@ -50,13 +56,20 @@ export default class Map extends Vue {
 
   sizeY = 0;
 
-  areCountersDisplayed = true;
+  areCountersDisplayed = false;
 
-  areStationsDisplayed = true;
+  areStationsDisplayed = false;
 
-  areConflictPointsDisplayed = true;
+  areConflictPointsDisplayed = false;
+
+  areSegmentDisplayed = true;
 
   map = undefined;
+
+  segmentColorScale = d3
+    .scaleSequentialLog()
+    .domain([1, 124]) // The max and min have been encoded to reduce processing time
+    .interpolator((t) => d3.interpolateRdYlGn(1 - t));
 
   async mounted() {
     this.initMap();
@@ -106,8 +119,27 @@ export default class Map extends Vue {
       d3.selectAll('circle')
         .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
         .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y);
+
+      // Use d3's custom geo transform method to implement the above
+      const thisMap = this.map;
+      function projectPoint(x, y) {
+        const point = thisMap.latLngToLayerPoint(new L.LatLng(y, x));
+        this.stream.point(point.x, point.y);
+      }
+
+      const projection = d3.geoTransform({
+        point: projectPoint,
+      });
+
+      // creates geopath from projected points (SVG)
+      const pathCreator = d3.geoPath().projection(projection);
+
+      d3.select('#map-id')
+        .selectAll('path')
+        .attr('d', pathCreator);
     };
 
+    update();
     this.map.on('moveend', update);
   }
 
@@ -144,6 +176,7 @@ export default class Map extends Vue {
     this.displayStations(mouseover, mouseleave);
     this.displayCounters(mouseover, mouseleave, mouseclick);
     this.displayConflictPoints();
+    this.displaySegments(mouseover, mouseleave);
   }
 
   displayCounters(mouseover, mouseleave, mouseclick) {
@@ -223,6 +256,25 @@ export default class Map extends Vue {
       d3.selectAll('.dangerous-point').remove();
     }
   }
+
+  displaySegments(mouseover, mouseleave) {
+    if (this.areSegmentDisplayed) {
+      const segments = dataSegments.features;
+
+      d3.select('#map-id')
+        .select('svg')
+        .selectAll('.segments')
+        .data(segments)
+        .join('path')
+        .attr('fill', 'none')
+        .attr('stroke', (e) => this.segmentColorScale(e.properties.contributions))
+        .attr('stroke-width', 2)
+        .on('mouseover', (e, d) => mouseover(e, { name: d.name }))
+        .on('mouseleave', mouseleave);
+    } else {
+      d3.selectAll('.segments').remove();
+    }
+  }
 }
 </script>
 <style scoped>
@@ -242,6 +294,10 @@ export default class Map extends Vue {
 
 .stations {
   background-color: #2a9d8f;
+}
+
+.segments {
+  color: forestgreen;
 }
 
 .legend-item {
