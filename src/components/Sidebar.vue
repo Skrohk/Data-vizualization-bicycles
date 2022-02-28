@@ -31,8 +31,8 @@
     <div id="sidebar-container">
       <div>
         <h3>
-          <label for="pet-select">Note de cyclabilité du </label>
-          <select name="pets" id="pet-select">
+          <label for="districts">Note de cyclabilité du </label>
+          <select name="districts" id="districts" @change="onDistrictChange">
             <option
               v-for="(district, index) in districtList"
               :value="index + 1"
@@ -96,15 +96,18 @@ import Graph from './Graph.vue';
     stationId: String,
     districtId: Number,
   },
+  emits: ['VIEW_CHANGED'],
 })
 export default class Sidebar extends Vue {
   isOpen = true;
 
   stationId!: string;
 
+  districtId!: number;
+
   districtList = ['1er arrondissement'].concat(
     // eslint-disable-next-line prefer-spread
-    Array.apply(null, Array(19)).map((x, i) => `${i + 1} ème arrondissement`),
+    Array.apply(null, Array(18)).map((x, i) => `${i + 2} ème arrondissement`),
   );
 
   close(): void {
@@ -112,7 +115,7 @@ export default class Sidebar extends Vue {
   }
 
   renderPieChart = (containerId: string, data: any) => {
-    PieChart(containerId, data, { donutLabel: 'Score : 42', height: 300 });
+    PieChart(containerId, data, { donutLabel: '42', height: 300 });
   };
 
   pieChartData = [
@@ -175,6 +178,11 @@ export default class Sidebar extends Vue {
         20,
       ),
     ];
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  onDistrictChange(e: any) :void {
+    this.$emit('VIEW_CHANGED', e?.target?.value);
   }
 
   async mounted(): Promise<void> {

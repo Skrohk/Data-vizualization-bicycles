@@ -12,7 +12,7 @@ function PieChart(
     paramTitle, // given d in data, returns the title text
     width = 640, // outer width, in pixels
     height = 400, // outer height, in pixels
-    innerRadius = 100, // inner radius of pie, in pixels (non-zero for donut)
+    innerRadius = 90, // inner radius of pie, in pixels (non-zero for donut)
     outerRadius = Math.min(width, height) / 2, // outer radius of pie, in pixels
     labelRadius = innerRadius * 0.2 + outerRadius * 0.8, // center radius of labels
     format = ',', // a format specifier for values (in the label)
@@ -113,12 +113,26 @@ function PieChart(
   svg
     .append('g')
     .attr('font-family', 'sans-serif')
-    .attr('font-size', 35)
+    .attr('font-size', 90)
+    .selectAll('text')
+    .data([1])
+    .join('text')
+    .attr('x', '-70px')
+    .attr('y', '30px')
+    .text(donutLabel);
+
+  svg
+    .append('g')
+    .attr('font-family', 'sans-serif')
+    .attr('font-size', 15)
     .attr('text-anchor', 'middle')
     .selectAll('text')
     .data([1])
     .join('text')
-    .text(donutLabel);
+    .text('/ 100')
+    .attr('x', '60px')
+    .attr('y', '30px')
+    .style('color', 'grey');
 }
 
 export default PieChart;

@@ -6,8 +6,12 @@
         <img src="../../public/logo.png" alt="Logo" width="55" />
         <h1 class="text-4xl">BIKE THE WAY</h1>
       </div>
-      <Map @STATION_SELECTED="onStationSelected" @DISTRICT_SELECTED="onDistrictSelected"/>
-      <sidebar :stationId="stationId" :districtId="districtId"/>
+      <Map
+        @STATION_SELECTED="onStationSelected"
+        @DISTRICT_SELECTED="onDistrictSelected"
+        :view=moveViewTo
+      />
+      <sidebar :stationId="stationId" :districtId="districtId" @VIEW_CHANGED="onViewChanged"/>
     </div>
   </main>
 </template>
@@ -30,6 +34,8 @@ export default class Home extends Vue {
 
   districtId = 1;
 
+  moveViewTo = 1;
+
   // eslint-disable-next-line class-methods-use-this
   onStationSelected(id: number): void {
     this.stationId = id.toString();
@@ -37,6 +43,10 @@ export default class Home extends Vue {
 
   onDistrictSelected(district: number): void {
     this.districtId = district;
+  }
+
+  onViewChanged(district: number): void {
+    this.moveViewTo = district;
   }
 }
 </script>

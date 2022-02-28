@@ -51,6 +51,15 @@ import dataDistricts from '../../public/data/arrondissements.json';
 
 @Options({
   emits: ['STATION_SELECTED', 'DISTRICT_SELECTED'],
+  props: {
+    view: [Number, String],
+  },
+  watch: {
+    view(district) {
+      console.log(...this.centroidDistricts[district - 1]);
+      this.map.flyTo(new L.LatLng(...this.centroidDistricts[district - 1]), 14);
+    },
+  },
 })
 export default class Map extends Vue {
   sizeX = 0;
@@ -63,11 +72,13 @@ export default class Map extends Vue {
 
   areConflictPointsDisplayed = false;
 
-  areSegmentDisplayed = true;
+  areSegmentDisplayed = false;
 
   map = undefined;
 
   district = undefined;
+
+  moveViewTo = 1;
 
   centroidDistricts = [
     [48.8536415100097, 2.34842991828918],
@@ -96,6 +107,11 @@ export default class Map extends Vue {
     .domain([1, 124]) // The max and min have been encoded to reduce processing time
     .interpolator((t) => d3.interpolateRdYlGn(1 - t));
 
+  moveTo(district) {
+    console.log(...this.centroidDistricts[district - 1]);
+    this.map.panTo(new L.LatLng(...this.centroidDistricts[district - 1]));
+  }
+
   async mounted() {
     this.initMap();
     this.geoMap();
@@ -120,7 +136,7 @@ export default class Map extends Vue {
   }
 
   initMap() {
-    this.map = L.map('map-id', { zoomControl: false }).setView([48.86, 2.37], 13);
+    this.map = L.map('map-id', { zoomControl: false }).setView(this.centroidDistricts[this.moveViewTo - 1], 13);
 
     L.tileLayer(
       'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2tyb2hrIiwiYSI6ImNrejdiOWJmaDBqd24ybm45NXIwNTVtMm8ifQ.PnszurfVYYiKa3npiOywhw',
