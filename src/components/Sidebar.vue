@@ -39,7 +39,7 @@
               :key="index + 1"
               :selected="index + 1 === districtId"
             >
-              {{district}}
+              {{ district }}
             </option>
           </select>
         </h3>
@@ -73,7 +73,6 @@
             :is-fullscreen="false"
           />
         </div>
-        <h3>Futures informations à venir</h3>
       </div>
       <div class="absolute bottom-1">
         <h3>Gaëtan Gelineau et Lucas Ruston</h3>
@@ -180,8 +179,7 @@ export default class Sidebar extends Vue {
     ];
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  onDistrictChange(e: any) :void {
+  onDistrictChange(e: any): void {
     this.$emit('VIEW_CHANGED', e?.target?.value);
   }
 

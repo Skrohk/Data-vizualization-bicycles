@@ -9,7 +9,7 @@
       border border-black
       flex flex-col
     "
-    style="z-index: 5000; width: 150px"
+    style="z-index: 5000; width: 180px"
   >
     <div class="legend-item">
       <div class="marker counters" />
@@ -26,11 +26,15 @@
     <div class="legend-item">
       <div class="marker conflict-points" />
       <p class="label">Zone de conflit</p>
-      <input type="checkbox" class="ml-1" v-model="areConflictPointsDisplayed" />
+      <input
+        type="checkbox"
+        class="ml-1"
+        v-model="areConflictPointsDisplayed"
+      />
     </div>
 
     <div class="legend-item">
-      <div class="marker segments" >-</div>
+      <div class="marker segments">-</div>
       <p class="label">Tronçon à améliorer</p>
       <input type="checkbox" class="ml-1" v-model="areSegmentDisplayed" />
     </div>
@@ -66,9 +70,9 @@ export default class Map extends Vue {
 
   sizeY = 0;
 
-  areCountersDisplayed = false;
+  areCountersDisplayed = true;
 
-  areStationsDisplayed = false;
+  areStationsDisplayed = true;
 
   areConflictPointsDisplayed = false;
 
@@ -210,15 +214,20 @@ export default class Map extends Vue {
       .style('z-index', 2000)
       .style('opacity', 0);
 
-    const mouseover = (e, d) => {
+    const mouseover = (e, d, increaseCircleSize = false) => {
       Tooltip.html(d.name)
         .style('opacity', 1)
         .style('left', `${e.pageX + 10}px`)
         .style('top', `${e.pageY - 15}px`);
+
+      if (increaseCircleSize) {
+        d3.select(e.currentTarget).attr('r', 12);
+      }
     };
 
-    const mouseleave = () => {
+    const mouseleave = (e) => {
       Tooltip.style('opacity', 0);
+      d3.select(e.currentTarget).attr('r', 4);
     };
 
     const mouseclick = (e, d) => {
@@ -250,7 +259,7 @@ export default class Map extends Vue {
         .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y)
         .attr('r', 4)
         .style('fill', '#e76f51')
-        .on('mouseover', mouseover)
+        .on('mouseover', (e, d) => mouseover(e, d, true))
         .on('mouseleave', mouseleave)
         .on('click', mouseclick)
         .style('pointer-events', 'auto')
