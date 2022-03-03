@@ -86,6 +86,7 @@ import { Options, Vue } from 'vue-class-component';
 import PieChart from '@/graph/piechart';
 import lineChart, { computeMovingAverage } from '@/graph/lineChart';
 import Graph from './Graph.vue';
+import districtScores from '../../public/data/districtScores.json';
 
 @Options({
   components: {
@@ -96,6 +97,11 @@ import Graph from './Graph.vue';
     districtId: Number,
   },
   emits: ['VIEW_CHANGED'],
+  watch: {
+    districtId() {
+      this.pieChartData = this.getPieChartData();
+    },
+  },
 })
 export default class Sidebar extends Vue {
   isOpen = true;
@@ -106,7 +112,7 @@ export default class Sidebar extends Vue {
 
   districtList = ['1er arrondissement'].concat(
     // eslint-disable-next-line prefer-spread
-    Array.apply(null, Array(18)).map((x, i) => `${i + 2} ème arrondissement`),
+    Array.apply(null, Array(19)).map((x, i) => `${i + 2} ème arrondissement`),
   );
 
   close(): void {
@@ -114,27 +120,36 @@ export default class Sidebar extends Vue {
   }
 
   renderPieChart = (containerId: string, data: any) => {
-    PieChart(containerId, data, { donutLabel: '42', height: 300 });
+    PieChart(containerId, data.detail, { donutLabel: data.score, height: 300 });
   };
 
-  pieChartData = [
-    {
-      name: 'Stations vélib',
-      value: 12,
-    },
-    {
-      name: 'Problèmes rapportés',
-      value: 5,
-    },
-    {
-      name: 'Pistes cyclables',
-      value: 15,
-    },
-    {
-      name: 'Accidents',
-      value: 10,
-    },
-  ];
+  pieChartData = this.getPieChartData();
+
+  getPieChartData() {
+    const district = districtScores[this.districtId as 1];
+    console.log();
+    return {
+      score: (district.score * 100).toFixed(1),
+      detail: [
+        {
+          name: 'Stations vélib',
+          value: district.velibStations,
+        },
+        {
+          name: 'Pistes cyclables',
+          value: Math.round(district.bicycleLanesLengthInKm),
+        },
+        {
+          name: 'Zones de conflit',
+          value: district.conflictZoneNb,
+        },
+        {
+          name: 'Accidents',
+          value: district.bicycleAccidents,
+        },
+      ],
+    };
+  }
 
   lineChartColors = ['#e76f51', '#2a9d8f', '#e9c46a'];
 

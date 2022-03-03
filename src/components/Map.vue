@@ -24,6 +24,12 @@
     </div>
 
     <div class="legend-item">
+      <div class="marker districts" />
+      <p class="label">Arrondissements</p>
+      <input type="checkbox" class="ml-1" v-model="areDistrictsDisplayed" />
+    </div>
+
+    <div class="legend-item">
       <div class="marker conflict-points" />
       <p class="label">Zone de conflit</p>
       <input
@@ -52,6 +58,7 @@ import dataStation from '../../public/data/velib-emplacement-des-stations.json';
 import dataDangerousPoints from '../../public/data/75056-points.json';
 import dataSegments from '../../public/data/75056-troncons-filtered.json';
 import dataDistricts from '../../public/data/arrondissements.json';
+import districtScores from '../../public/data/districtScores.json';
 
 @Options({
   emits: ['STATION_SELECTED', 'DISTRICT_SELECTED'],
@@ -60,7 +67,6 @@ import dataDistricts from '../../public/data/arrondissements.json';
   },
   watch: {
     view(district) {
-      console.log(...this.centroidDistricts[district - 1]);
       this.map.flyTo(new L.LatLng(...this.centroidDistricts[district - 1]), 14);
     },
   },
@@ -77,6 +83,8 @@ export default class Map extends Vue {
   areConflictPointsDisplayed = false;
 
   areSegmentDisplayed = false;
+
+  areDistrictsDisplayed = false;
 
   map = undefined;
 
@@ -104,12 +112,18 @@ export default class Map extends Vue {
     [48.8866996765136, 2.30349993705749],
     [48.8917007446289, 2.35100007057189],
     [48.8825988769531, 2.39109992980957],
+    [48.86346057889563, 2.401188129284682],
   ];
 
   segmentColorScale = d3
     .scaleSequentialLog()
     .domain([1, 124]) // The max and min have been encoded to reduce processing time
     .interpolator((t) => d3.interpolateRdYlGn(1 - t));
+
+  districtColorScale = d3
+    .scaleSequentialLog()
+    .domain([0, 1])
+    .interpolator(d3.interpolateRdYlGn);
 
   moveTo(district) {
     console.log(...this.centroidDistricts[district - 1]);
@@ -119,6 +133,7 @@ export default class Map extends Vue {
   async mounted() {
     this.initMap();
     this.geoMap();
+    // this.computeStats();
   }
 
   async updated() {
@@ -163,6 +178,27 @@ export default class Map extends Vue {
     this.map.on('moveend', this.update);
 
     this.district = dataDistricts.features;
+  }
+
+  computeStats() {
+    console.log('Data dangerous points : ', dataDangerousPoints.features);
+    const pointNbByDistrict = {};
+    let totalSum = 0;
+    dataDangerousPoints.features.forEach((point) => {
+      this.district.forEach((district) => {
+        if (d3.geoContains(district, point.geometry.coordinates)) {
+          const districtNb = district.properties.c_ar;
+          if (!pointNbByDistrict[districtNb]) {
+            pointNbByDistrict[districtNb] = 1;
+          } else {
+            pointNbByDistrict[districtNb] += 1;
+          }
+          totalSum += 1;
+        }
+      });
+    });
+    console.log('PointNbByDistrict : ', pointNbByDistrict);
+    console.log('total sum : ', totalSum);
   }
 
   update() {
@@ -238,6 +274,24 @@ export default class Map extends Vue {
     this.displayCounters(mouseover, mouseleave, mouseclick);
     this.displayConflictPoints();
     this.displaySegments(mouseover, mouseleave);
+    this.displayDistricts();
+  }
+
+  displayDistricts() {
+    if (this.areDistrictsDisplayed) {
+      d3.select('#map-id')
+        .select('svg')
+        .selectAll('.district')
+        .data(this.district)
+        .join('path')
+        .attr('class', 'district')
+        .attr('fill', (e) => { console.log(d3.interpolateRdYlGn(districtScores[e.properties.c_ar].score)); return d3.interpolateRdYlGn(districtScores[e.properties.c_ar].score); })
+        .style('opacity', 0.2);
+
+      this.update();
+    } else {
+      d3.selectAll('.district').remove();
+    }
   }
 
   displayCounters(mouseover, mouseleave, mouseclick) {
@@ -327,6 +381,7 @@ export default class Map extends Vue {
         .selectAll('.segments')
         .data(segments)
         .join('path')
+        .attr('class', 'segments')
         .attr('fill', 'none')
         .attr('stroke', (e) => this.segmentColorScale(e.properties.contributions))
         .attr('stroke-width', 2)
@@ -335,7 +390,7 @@ export default class Map extends Vue {
 
       this.update();
     } else {
-      d3.select('#map-id').selectAll('path').remove();
+      d3.select('#map-id').selectAll('.segments').remove();
     }
   }
 }
@@ -345,6 +400,10 @@ export default class Map extends Vue {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+}
+
+.districts {
+  background-color: #0000ff;
 }
 
 .conflict-points {
