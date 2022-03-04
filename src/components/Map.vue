@@ -257,6 +257,8 @@ export default class Map extends Vue {
         .join('path')
         .attr('class', 'district')
         .attr('fill', (e) => d3.interpolateRdYlGn(districtScores[e.properties.c_ar].score / 100))
+        .attr('stroke', '#000000')
+        .attr('stroke-width', 1)
         .style('opacity', 0.2);
 
       this.update();
