@@ -64,4 +64,4 @@ The datasets used in this projet are located in the **public/data** folder, alon
 
 As explained above, most of this data was obtained from open data websites, and we used a scraping script (**public/data/scrapper.js**) to fetch all the counters datasets and format them.
 
-The use of d3 geoContains method, combined with geojson datasets,s allowed us to dynamically determine in which district of Paris a given point is located. We used this to compute data for each district's cycling score.
+The use of d3 geoContains method, combined with geojson datasets, allowed us to dynamically determine in which district of Paris a given point is located. We used this to compute data for each district's cycling score.
