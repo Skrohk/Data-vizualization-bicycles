@@ -4,5 +4,4 @@
 - Cleaner le projet pour le mettre sur github
 - Changer le cercle de la légende pour arrondissement [L]
 - Intégrer les accidents sur la carte (ou au moins clean les données qu'on a)
-- Mettre à jour le readme (sources, préciser ou le code des graphes est, parler du formatage des données aussi)
 - Préparer la présentation
