@@ -40,7 +40,7 @@
     </div>
 
     <div class="legend-item">
-      <div class="marker segments">-</div>
+      <div class="segments">-</div>
       <p class="label">Tronçon à améliorer</p>
       <input type="checkbox" class="ml-1" v-model="areSegmentDisplayed" />
     </div>
@@ -376,7 +376,8 @@ export default class Map extends Vue {
 }
 
 .districts {
-  background-color: #0000ff;
+  background-color: #fef4e4;
+  border: grey solid 1px;
 }
 
 .conflict-points {
@@ -393,6 +394,7 @@ export default class Map extends Vue {
 
 .segments {
   color: forestgreen;
+  font-size: 19pt;
 }
 
 .legend-item {
