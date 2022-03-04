@@ -57,3 +57,11 @@ npm run lint
 - The vélib location dataset : [here](https://opendata.paris.fr/explore/dataset/velib-emplacement-des-stations/information/)
 - Length of bicycle lanes from Paris Open Data website [here](https://opendata.paris.fr/explore/dataset/reseau-cyclable/)
 - Accidents involving bicycles [here](https://www.data.gouv.fr/fr/datasets/bases-de-donnees-annuelles-des-accidents-corporels-de-la-circulation-routiere-annees-de-2005-a-2020/)
+
+## Data formatting
+
+The datasets used in this projet are located in the **public/data** folder, along with some scripts used to parse and format them. To avoid loading all the data at once in the website (which would result in really slow loading time), this web app is loading each dataset separately when needed (for instance when clicking on a specific counter, the graph data for that counter is loaded)
+
+As explained above, most of this data was obtained from open data websites, and we used a scraping script (**public/data/scrapper.js**) to fetch all the counters datasets and format them.
+
+The use of d3 geoContains method, combined with geojson datasets,s allowed us to dynamically determine in which district of Paris a given point is located. We used this to compute data for each district's cycling score.
