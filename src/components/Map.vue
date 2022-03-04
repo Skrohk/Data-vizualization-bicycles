@@ -78,13 +78,13 @@ export default class Map extends Vue {
 
   areCountersDisplayed = true;
 
-  areStationsDisplayed = true;
+  areStationsDisplayed = false;
 
   areConflictPointsDisplayed = false;
 
   areSegmentDisplayed = false;
 
-  areDistrictsDisplayed = false;
+  areDistrictsDisplayed = true;
 
   map = undefined;
 
@@ -120,20 +120,13 @@ export default class Map extends Vue {
     .domain([1, 124]) // The max and min have been encoded to reduce processing time
     .interpolator((t) => d3.interpolateRdYlGn(1 - t));
 
-  districtColorScale = d3
-    .scaleSequentialLog()
-    .domain([0, 1])
-    .interpolator(d3.interpolateRdYlGn);
-
   moveTo(district) {
-    console.log(...this.centroidDistricts[district - 1]);
     this.map.panTo(new L.LatLng(...this.centroidDistricts[district - 1]));
   }
 
   async mounted() {
     this.initMap();
     this.geoMap();
-    // this.computeStats();
   }
 
   async updated() {
@@ -180,34 +173,12 @@ export default class Map extends Vue {
     this.district = dataDistricts.features;
   }
 
-  computeStats() {
-    console.log('Data dangerous points : ', dataDangerousPoints.features);
-    const pointNbByDistrict = {};
-    let totalSum = 0;
-    dataDangerousPoints.features.forEach((point) => {
-      this.district.forEach((district) => {
-        if (d3.geoContains(district, point.geometry.coordinates)) {
-          const districtNb = district.properties.c_ar;
-          if (!pointNbByDistrict[districtNb]) {
-            pointNbByDistrict[districtNb] = 1;
-          } else {
-            pointNbByDistrict[districtNb] += 1;
-          }
-          totalSum += 1;
-        }
-      });
-    });
-    console.log('PointNbByDistrict : ', pointNbByDistrict);
-    console.log('total sum : ', totalSum);
-  }
-
   update() {
     const coordinatesObject = this.map.getCenter();
     const coordinates = [coordinatesObject.lng, coordinatesObject.lat];
 
     this.district.forEach((district) => {
       if (d3.geoContains(district, coordinates)) {
-        console.log(district.properties.c_ar);
         this.$emit('DISTRICT_SELECTED', district.properties.c_ar);
       }
     });
@@ -285,7 +256,7 @@ export default class Map extends Vue {
         .data(this.district)
         .join('path')
         .attr('class', 'district')
-        .attr('fill', (e) => { console.log(d3.interpolateRdYlGn(districtScores[e.properties.c_ar].score)); return d3.interpolateRdYlGn(districtScores[e.properties.c_ar].score); })
+        .attr('fill', (e) => d3.interpolateRdYlGn(districtScores[e.properties.c_ar].score / 100))
         .style('opacity', 0.2);
 
       this.update();

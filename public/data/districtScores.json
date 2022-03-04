@@ -1,162 +1,142 @@
 {
   "1": {
-    "velibStations": 26,
-    "surface": 183,
-    "bicycleLanesLengthInKm": 39.72937788685002,
-    "conflictZoneNb": 206,
-    "bicycleAccidents": 39,
-    "score": 0.013907370015675206
+    "velibScore": 14.065573770491802,
+    "bicycleLanesScore": 21.735318822375937,
+    "segmentsToImproveScore": 19.414316702819956,
+    "bicycleAccidentsScore": 16.371681415929203,
+    "score": 71.5868907116169
   },
   "2": {
-    "velibStations": 25,
-    "surface": 99,
-    "bicycleLanesLengthInKm": 24.721217930080012,
-    "conflictZoneNb": 156,
-    "bicycleAccidents": 14,
-    "score": 0.1044260434299226
+    "velibScore": 25,
+    "bicycleLanesScore": 25,
+    "segmentsToImproveScore": 8.514099783080258,
+    "bicycleAccidentsScore": 21.902654867256636,
+    "score": 80.41675465033688
   },
   "3": {
-    "velibStations": 14,
-    "surface": 117,
-    "bicycleLanesLengthInKm": 16.803117091019995,
-    "conflictZoneNb": 1,
-    "bicycleAccidents": 47,
-    "score": 0.6654498649140026
+    "velibScore": 11.846153846153847,
+    "bicycleLanesScore": 14.378359304700709,
+    "segmentsToImproveScore": 17.977223427331886,
+    "bicycleAccidentsScore": 14.601769911504425,
+    "score": 58.80350648969087
   },
   "4": {
-    "velibStations": 27,
-    "surface": 160,
-    "bicycleLanesLengthInKm": 33.88434588531001,
-    "conflictZoneNb": 160,
-    "bicycleAccidents": 58,
-    "score": 0.013930479466429627
+    "velibScore": 16.70625,
+    "bicycleLanesScore": 21.202372670143472,
+    "segmentsToImproveScore": 16.67570498915401,
+    "bicycleAccidentsScore": 12.168141592920353,
+    "score": 66.75246925221784
   },
   "5": {
-    "velibStations": 37,
-    "surface": 254,
-    "bicycleLanesLengthInKm": 31.137377854980013,
-    "conflictZoneNb": 0,
-    "bicycleAccidents": 65,
-    "score": 1
+    "velibScore": 14.421259842519682,
+    "bicycleLanesScore": 12.273082693235505,
+    "segmentsToImproveScore": 17.92299349240781,
+    "bicycleAccidentsScore": 10.619469026548673,
+    "score": 55.23680505471167
   },
   "6": {
-    "velibStations": 33,
-    "surface": 215,
-    "bicycleLanesLengthInKm": 28.78847791797,
-    "conflictZoneNb": 147,
-    "bicycleAccidents": 58,
-    "score": 0.008714912756141786
+    "velibScore": 15.195348837209302,
+    "bicycleLanesScore": 13.405579237123554,
+    "segmentsToImproveScore": 18.790672451193057,
+    "bicycleAccidentsScore": 12.168141592920353,
+    "score": 59.559742118446266
   },
   "7": {
-    "velibStations": 31,
-    "surface": 409,
-    "bicycleLanesLengthInKm": 42.783767180290006,
-    "conflictZoneNb": 0,
-    "bicycleAccidents": 50,
-    "score": 0.5771930919281097
+    "velibScore": 7.503667481662592,
+    "bicycleLanesScore": 10.472757667371381,
+    "segmentsToImproveScore": 20.390455531453362,
+    "bicycleAccidentsScore": 13.938053097345133,
+    "score": 52.30493377783247
   },
   "8": {
-    "velibStations": 54,
-    "surface": 388,
-    "bicycleLanesLengthInKm": 38.88017503168999,
-    "conflictZoneNb": 0,
-    "bicycleAccidents": 58,
-    "score": 0.8752408018842658
+    "velibScore": 13.778350515463917,
+    "bicycleLanesScore": 10.032330384510322,
+    "segmentsToImproveScore": 0,
+    "bicycleAccidentsScore": 12.168141592920353,
+    "score": 35.978822492894594
   },
   "9": {
-    "velibStations": 46,
-    "surface": 218,
-    "bicycleLanesLengthInKm": 28.222356026909992,
-    "conflictZoneNb": 239,
-    "bicycleAccidents": 36,
-    "score": 0.011508570887582123
+    "velibScore": 20.889908256880734,
+    "bicycleLanesScore": 12.961107501086394,
+    "segmentsToImproveScore": 9.842733188720173,
+    "bicycleAccidentsScore": 17.035398230088493,
+    "score": 60.7291471767758
   },
   "10": {
-    "velibStations": 56,
-    "surface": 289,
-    "bicycleLanesLengthInKm": 39.847545720730054,
-    "conflictZoneNb": 2,
-    "bicycleAccidents": 101,
-    "score": 0.3209580845430903
+    "velibScore": 19.18339100346021,
+    "bicycleLanesScore": 13.804131092595885,
+    "segmentsToImproveScore": 7.13123644251627,
+    "bicycleAccidentsScore": 2.6548672566371696,
+    "score": 42.77362579520953
   },
   "11": {
-    "velibStations": 58,
-    "surface": 367,
-    "bicycleLanesLengthInKm": 56.32567890808995,
-    "conflictZoneNb": 240,
-    "bicycleAccidents": 100,
-    "score": 0.0036633826689306944
+    "velibScore": 15.64577656675749,
+    "bicycleLanesScore": 15.365465115198775,
+    "segmentsToImproveScore": 11.36117136659436,
+    "bicycleAccidentsScore": 2.8761061946902644,
+    "score": 45.24851924324089
   },
   "12": {
-    "velibStations": 68,
-    "surface": 637,
-    "bicycleLanesLengthInKm": 112.67272976998994,
-    "conflictZoneNb": 0,
-    "bicycleAccidents": 113,
-    "score": 0.6082294573125668
+    "velibScore": 10.56828885400314,
+    "bicycleLanesScore": 17.70862021695528,
+    "segmentsToImproveScore": 14.994577006507592,
+    "bicycleAccidentsScore": 0,
+    "score": 43.27148607746601
   },
   "13": {
-    "velibStations": 71,
-    "surface": 715,
-    "bicycleLanesLengthInKm": 87.5532313973501,
-    "conflictZoneNb": 299,
-    "bicycleAccidents": 78,
-    "score": 0.0018914706912158703
+    "velibScore": 9.83076923076923,
+    "bicycleLanesScore": 12.259463865052513,
+    "segmentsToImproveScore": 10.683297180043382,
+    "bicycleAccidentsScore": 7.743362831858408,
+    "score": 40.51689310772353
   },
   "14": {
-    "velibStations": 56,
-    "surface": 564,
-    "bicycleLanesLengthInKm": 66.33841729561995,
-    "conflictZoneNb": 463,
-    "bicycleAccidents": 50,
-    "score": 0.001832331167688562
+    "velibScore": 9.829787234042552,
+    "bicycleLanesScore": 11.775824973355514,
+    "segmentsToImproveScore": 3.443600867678959,
+    "bicycleAccidentsScore": 13.938053097345133,
+    "score": 38.98726617242216
   },
   "15": {
-    "velibStations": 90,
-    "surface": 848,
-    "bicycleLanesLengthInKm": 85.3804414843499,
-    "conflictZoneNb": 2,
-    "bicycleAccidents": 96,
-    "score": 0.1350559562358037
+    "velibScore": 10.507075471698112,
+    "bicycleLanesScore": 10.08017063879957,
+    "segmentsToImproveScore": 12.066160520607374,
+    "bicycleAccidentsScore": 3.761061946902655,
+    "score": 36.414468578007714
   },
   "16": {
-    "velibStations": 63,
-    "surface": 791,
-    "bicycleLanesLengthInKm": 72.09743985973006,
-    "conflictZoneNb": 0,
-    "bicycleAccidents": 110,
-    "score": 0.24022144201225026
+    "velibScore": 7.884955752212389,
+    "bicycleLanesScore": 9.125332547049613,
+    "segmentsToImproveScore": 17.02819956616052,
+    "bicycleAccidentsScore": 0.6637168141592931,
+    "score": 34.70220467958182
   },
   "17": {
-    "velibStations": 61,
-    "surface": 567,
-    "bicycleLanesLengthInKm": 49.37893226140003,
-    "conflictZoneNb": 275,
-    "bicycleAccidents": 73,
-    "score": 0.001692662991007479
+    "velibScore": 10.65079365079365,
+    "bicycleLanesScore": 8.718945761228982,
+    "segmentsToImproveScore": 14.479392624728849,
+    "bicycleAccidentsScore": 8.849557522123893,
+    "score": 42.69868955887538
   },
   "18": {
-    "velibStations": 63,
-    "surface": 601,
-    "bicycleLanesLengthInKm": 68.01470035359,
-    "conflictZoneNb": 272,
-    "bicycleAccidents": 65,
-    "score": 0.002433410735708922
+    "velibScore": 10.377703826955074,
+    "bicycleLanesScore": 11.330097761534471,
+    "segmentsToImproveScore": 7.321041214750543,
+    "bicycleAccidentsScore": 10.619469026548673,
+    "score": 39.64831182978876
   },
   "19": {
-    "velibStations": 64,
-    "surface": 679,
-    "bicycleLanesLengthInKm": 78.91182621183006,
-    "conflictZoneNb": 242,
-    "bicycleAccidents": 74,
-    "score": 0.0022173872966184285
+    "velibScore": 9.331369661266569,
+    "bicycleLanesScore": 11.635301996555555,
+    "segmentsToImproveScore": 15.997830802603035,
+    "bicycleAccidentsScore": 8.628318584070795,
+    "score": 45.592821044495956
   },
   "20": {
-    "velibStations": 66,
-    "surface": 598,
-    "bicycleLanesLengthInKm": 80.17065370062002,
-    "conflictZoneNb": 216,
-    "bicycleAccidents": 61,
-    "score": 0.004068782289083291
+    "velibScore": 10.926421404682273,
+    "bicycleLanesScore": 13.422072517602707,
+    "segmentsToImproveScore": 10.845986984815617,
+    "bicycleAccidentsScore": 11.504424778761063,
+    "score": 46.69890568586166
   }
 }

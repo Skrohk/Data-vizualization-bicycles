@@ -30,7 +30,7 @@
     </div>
     <div id="sidebar-container">
       <div>
-        <h3>
+        <h3 class="mt-4">
           <label for="districts">Note de cyclabilité du </label>
           <select name="districts" id="districts" @change="onDistrictChange">
             <option
@@ -129,23 +129,23 @@ export default class Sidebar extends Vue {
     const district = districtScores[this.districtId as 1];
     console.log();
     return {
-      score: (district.score * 100).toFixed(1),
+      score: district.score.toFixed(0),
       detail: [
         {
           name: 'Stations vélib',
-          value: district.velibStations,
+          value: district.velibScore.toFixed(1),
         },
         {
           name: 'Pistes cyclables',
-          value: Math.round(district.bicycleLanesLengthInKm),
+          value: district.bicycleLanesScore.toFixed(1),
         },
         {
-          name: 'Zones de conflit',
-          value: district.conflictZoneNb,
+          name: 'Tronçons à améliorer',
+          value: district.segmentsToImproveScore.toFixed(1),
         },
         {
           name: 'Accidents',
-          value: district.bicycleAccidents,
+          value: district.bicycleAccidentsScore.toFixed(1),
         },
       ],
     };
@@ -239,8 +239,6 @@ export default class Sidebar extends Vue {
 #sidebar-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* margin-left: 12%; */
 }
 h2 {
   font-family: 'Zen Kurenaido', sans-serif;

@@ -3,7 +3,8 @@
 // surface (en hectares) : https://fr.vikidia.org/wiki/Arrondissements_de_Paris
 // Longueur de pistes cyclables (en km): https://opendata.paris.fr/explore/dataset/reseau-cyclable/
 // conflictZoneNb : baromètres des pistes cyclables (même que ce qu'on affiche sur la carte)
-// BicycleAccidents : https://www.data.gouv.fr/en/datasets/accidents-de-velo/
+// segmentsToImprove : baromètres des pistes cyclables (même que ce qu'on affiche sur la carte)
+// BicycleAccidents : https://www.data.gouv.fr/fr/datasets/bases-de-donnees-annuelles-des-accidents-corporels-de-la-circulation-routiere-annees-de-2005-a-2020/
 
 const districts = {
   1: {
@@ -12,6 +13,7 @@ const districts = {
     bicycleLanesLengthInKm: 39.72937788685002,
     conflictZoneNb: 206,
     bicycleAccidents: 39,
+    segmentsToImprove: 206,
   },
   2: {
     velibStations: 25,
@@ -19,6 +21,7 @@ const districts = {
     bicycleLanesLengthInKm: 24.721217930080012,
     conflictZoneNb: 156,
     bicycleAccidents: 14,
+    segmentsToImprove: 608,
   },
   3: {
     velibStations: 14,
@@ -26,6 +29,7 @@ const districts = {
     bicycleLanesLengthInKm: 16.803117091019995,
     conflictZoneNb: 1,
     bicycleAccidents: 47,
+    segmentsToImprove: 259,
   },
   4: {
     velibStations: 27,
@@ -33,6 +37,7 @@ const districts = {
     bicycleLanesLengthInKm: 33.88434588531001,
     conflictZoneNb: 160,
     bicycleAccidents: 58,
+    segmentsToImprove: 307,
   },
   5: {
     velibStations: 37,
@@ -40,6 +45,7 @@ const districts = {
     bicycleLanesLengthInKm: 31.137377854980013,
     conflictZoneNb: 0,
     bicycleAccidents: 65,
+    segmentsToImprove: 261,
   },
   6: {
     velibStations: 33,
@@ -47,6 +53,7 @@ const districts = {
     bicycleLanesLengthInKm: 28.78847791797,
     conflictZoneNb: 147,
     bicycleAccidents: 58,
+    segmentsToImprove: 229,
   },
   7: {
     velibStations: 31,
@@ -54,6 +61,7 @@ const districts = {
     bicycleLanesLengthInKm: 42.783767180290006,
     conflictZoneNb: 0,
     bicycleAccidents: 50,
+    segmentsToImprove: 170,
   },
   8: {
     velibStations: 54,
@@ -61,6 +69,7 @@ const districts = {
     bicycleLanesLengthInKm: 38.88017503168999,
     conflictZoneNb: 0,
     bicycleAccidents: 58,
+    segmentsToImprove: 922,
   },
   9: {
     velibStations: 46,
@@ -68,6 +77,7 @@ const districts = {
     bicycleLanesLengthInKm: 28.222356026909992,
     conflictZoneNb: 239,
     bicycleAccidents: 36,
+    segmentsToImprove: 559,
   },
   10: {
     velibStations: 56,
@@ -75,6 +85,7 @@ const districts = {
     bicycleLanesLengthInKm: 39.847545720730054,
     conflictZoneNb: 2,
     bicycleAccidents: 101,
+    segmentsToImprove: 659,
   },
   11: {
     velibStations: 58,
@@ -82,6 +93,7 @@ const districts = {
     bicycleLanesLengthInKm: 56.32567890808995,
     conflictZoneNb: 240,
     bicycleAccidents: 100,
+    segmentsToImprove: 503,
   },
   12: {
     velibStations: 68,
@@ -89,6 +101,7 @@ const districts = {
     bicycleLanesLengthInKm: 112.67272976998994,
     conflictZoneNb: 0,
     bicycleAccidents: 113,
+    segmentsToImprove: 369,
   },
   13: {
     velibStations: 71,
@@ -96,6 +109,7 @@ const districts = {
     bicycleLanesLengthInKm: 87.5532313973501,
     conflictZoneNb: 299,
     bicycleAccidents: 78,
+    segmentsToImprove: 528,
   },
   14: {
     velibStations: 56,
@@ -103,6 +117,7 @@ const districts = {
     bicycleLanesLengthInKm: 66.33841729561995,
     conflictZoneNb: 463,
     bicycleAccidents: 50,
+    segmentsToImprove: 795,
   },
   15: {
     velibStations: 90,
@@ -110,6 +125,7 @@ const districts = {
     bicycleLanesLengthInKm: 85.3804414843499,
     conflictZoneNb: 2,
     bicycleAccidents: 96,
+    segmentsToImprove: 477,
   },
   16: {
     velibStations: 63,
@@ -117,6 +133,7 @@ const districts = {
     bicycleLanesLengthInKm: 72.09743985973006,
     conflictZoneNb: 0,
     bicycleAccidents: 110,
+    segmentsToImprove: 294,
   },
   17: {
     velibStations: 61,
@@ -124,6 +141,7 @@ const districts = {
     bicycleLanesLengthInKm: 49.37893226140003,
     conflictZoneNb: 275,
     bicycleAccidents: 73,
+    segmentsToImprove: 388,
   },
   18: {
     velibStations: 63,
@@ -131,6 +149,7 @@ const districts = {
     bicycleLanesLengthInKm: 68.01470035359,
     conflictZoneNb: 272,
     bicycleAccidents: 65,
+    segmentsToImprove: 652,
   },
   19: {
     velibStations: 64,
@@ -138,6 +157,7 @@ const districts = {
     bicycleLanesLengthInKm: 78.91182621183006,
     conflictZoneNb: 242,
     bicycleAccidents: 74,
+    segmentsToImprove: 332,
   },
   20: {
     velibStations: 66,
@@ -145,53 +165,63 @@ const districts = {
     bicycleLanesLengthInKm: 80.17065370062002,
     conflictZoneNb: 216,
     bicycleAccidents: 61,
+    segmentsToImprove: 522,
   },
 };
 
-const scores = [];
-let maxScore = 0;
+const scores = {};
+let maxVelib = 0;
+let maxBicycleLaneLength = 0;
+let maxSegmentsToImprove = 0;
+let maxBicycleAccidents = 0;
+
 for (let i = 1; i <= 20; i++) {
   const district = districts[i];
   const surface = district.surface;
-  const score =
-    ((district.velibStations / surface) * (district.bicycleLanesLengthInKm / surface)) /
-    (district.bicycleAccidents * (district.conflictZoneNb + 1));
-  if (score >= maxScore) {
-    maxScore = score;
+
+  const velibScore = district.velibStations / surface;
+  const bicycleLanesScore = district.bicycleLanesLengthInKm / surface;
+  const segmentsToImproveScore = district.segmentsToImprove;
+  const bicycleAccidentsScore = district.bicycleAccidents;
+  if (velibScore >= maxVelib) {
+    maxVelib = velibScore;
   }
-  console.log(`Arrondissement ${i}: score = ${score}`);
-  scores.push({ arr: i, score: score });
+  if (bicycleLanesScore >= maxBicycleLaneLength) {
+    maxBicycleLaneLength = bicycleLanesScore;
+  }
+  if (segmentsToImproveScore >= maxSegmentsToImprove) {
+    maxSegmentsToImprove = segmentsToImproveScore;
+  }
+  if (bicycleAccidentsScore >= maxBicycleAccidents) {
+    maxBicycleAccidents = bicycleAccidentsScore;
+  }
 }
 
-const normalizedScores = scores.map((score) => ({ arr: score.arr, score: score.score / maxScore }));
+for (let i = 1; i <= 20; i++) {
+  const district = districts[i];
+  const surface = district.surface;
 
-normalizedScores.sort((a, b) => {
-  if (a.score > b.score) return -1;
-  if (b.score > a.score) return 1;
-  return 0;
-});
+  const velibScore = district.velibStations / surface;
+  const bicycleLanesScore = district.bicycleLanesLengthInKm / surface;
+  const segmentsToImproveScore = district.segmentsToImprove;
+  const bicycleAccidentsScore = district.bicycleAccidents;
 
-console.log(normalizedScores);
+  const normalizedVelibScore = (velibScore / maxVelib) * 25;
+  const normalizedBicycleLanesScore = (bicycleLanesScore / maxBicycleLaneLength) * 25;
+  const normalizedSegmentsToImproveScore = (1 - segmentsToImproveScore / maxSegmentsToImprove) * 25;
+  const normalizedBicycleAccidentsScore = (1 - bicycleAccidentsScore / maxBicycleAccidents) * 25;
 
-// [
-//   { arr: 5, score: 1 },
-//   { arr: 8, score: 0.8752408018842658 },
-//   { arr: 3, score: 0.6654498649140026 },
-//   { arr: 12, score: 0.6082294573125668 },
-//   { arr: 7, score: 0.5771930919281097 },
-//   { arr: 10, score: 0.3209580845430903 },
-//   { arr: 16, score: 0.24022144201225026 },
-//   { arr: 15, score: 0.1350559562358037 },
-//   { arr: 2, score: 0.1044260434299226 },
-//   { arr: 4, score: 0.013930479466429627 },
-//   { arr: 1, score: 0.013907370015675206 },
-//   { arr: 9, score: 0.011508570887582123 },
-//   { arr: 6, score: 0.008714912756141786 },
-//   { arr: 20, score: 0.004068782289083291 },
-//   { arr: 11, score: 0.0036633826689306944 },
-//   { arr: 18, score: 0.002433410735708922 },
-//   { arr: 19, score: 0.0022173872966184285 },
-//   { arr: 13, score: 0.0018914706912158703 },
-//   { arr: 14, score: 0.001832331167688562 },
-//   { arr: 17, score: 0.001692662991007479 }
-// ]
+  scores[i] = {
+    velibScore: normalizedVelibScore,
+    bicycleLanesScore: normalizedBicycleLanesScore,
+    segmentsToImproveScore: normalizedSegmentsToImproveScore,
+    bicycleAccidentsScore: normalizedBicycleAccidentsScore,
+    score:
+      normalizedVelibScore +
+      normalizedBicycleLanesScore +
+      normalizedSegmentsToImproveScore +
+      normalizedBicycleAccidentsScore,
+  };
+}
+
+console.log('scores : ', scores);

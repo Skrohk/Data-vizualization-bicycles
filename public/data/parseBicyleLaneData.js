@@ -45,4 +45,21 @@ const getAccidentsByDistrict = () => {
     });
 };
 
-getAccidentsByDistrict();
+// Fonction used in Map.vue component to compute some geographic stats
+// computeStats() {
+//   const pointNbByDistrict = {};
+//   let totalSum = 0;
+//   dataSegments.features.forEach((segment) => {
+//     this.district.forEach((district) => {
+//       if (d3.geoContains(district, segment.geometry.coordinates[0])) {
+//         const districtNb = district.properties.c_ar;
+//         if (!pointNbByDistrict[districtNb]) {
+//           pointNbByDistrict[districtNb] = segment.properties.contributions;
+//         } else {
+//           pointNbByDistrict[districtNb] += segment.properties.contributions;
+//         }
+//         totalSum += 1;
+//       }
+//     });
+//   });
+// }
