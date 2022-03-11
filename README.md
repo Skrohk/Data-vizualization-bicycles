@@ -66,4 +66,4 @@ As explained above, most of this data was obtained from open data websites, and 
 
 Some formatting and filtering was also done in the script **public/data/computeStatistics.js** and we computed the districts score with **public/data/districtScores.js**
 
-The use of d3 geoContains method, combined with geojson datasets,s allowed us to dynamically determine in which district of Paris a given point is located. We used this to compute data for each district's cycling score.
+The use of d3 geoContains method, combined with geojson datasets, allowed us to dynamically determine in which district of Paris a given point is located. We used this to compute data for each district's cycling score.

@@ -76,6 +76,11 @@
       </div>
       <div class="absolute bottom-1">
         <h3>Gaëtan Gelineau et Lucas Ruston</h3>
+        <h3>
+          <a href="https://github.com/Skrohk/Data-vizualization-bicycles"
+            >https://github.com/Skrohk/Data-vizualization-bicycles</a
+          >
+        </h3>
       </div>
     </div>
   </div>
