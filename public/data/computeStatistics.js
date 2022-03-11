@@ -63,3 +63,22 @@ const getAccidentsByDistrict = () => {
 //     });
 //   });
 // }
+
+// Function used in Map.vue to filter the conflict points
+// We only wanted to keep points inside Paris, not the whole Ile de France
+
+// computeStats() {
+//   const pointsInParis = [];
+//   console.log('Total point nb : ', dataDangerousPoints.features.length);
+//   dataDangerousPoints.features.forEach((point, index) => {
+//     if (index % 10000 === 0) {
+//       console.log('Index : ', index, 'Points : ', pointsInParis.length);
+//     }
+//     this.district.forEach((district) => {
+//       if (d3.geoContains(district, point.geometry.coordinates)) {
+//         pointsInParis.push(point);
+//       }
+//     });
+//   });
+//   console.log(pointsInParis);
+// }
