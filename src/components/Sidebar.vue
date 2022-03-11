@@ -30,7 +30,7 @@
     </div>
     <div id="sidebar-container">
       <div>
-        <h3 class="mt-4">
+        <h3 class="mt-1">
           <label for="districts">Note de cyclabilité du </label>
           <select name="districts" id="districts" @change="onDistrictChange">
             <option
@@ -47,10 +47,10 @@
           :renderGraph="renderPieChart"
           :graphData="pieChartData"
           :is-fullscreen="false"
-          class="my-2"
+          class="my-1"
         />
         <h3>Compteur</h3>
-        <div class="my-2">
+        <div class="mb-1">
           <div class="flex flex-row items-center justify-between">
             <div
               class="flex flex-row items-center"
