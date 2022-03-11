@@ -1,7 +1,0 @@
-- La donnée des zones de conflit sur la carte est très bizarre, certains arrondissements sont complètement absents
-- La légende pour les tronçons n'est pas claire on ne voit pas le point. [L]
-- Cleaner la sidebar space-between vertical [L]
-- Cleaner le projet pour le mettre sur github
-- Changer le cercle de la légende pour arrondissement [L]
-- Intégrer les accidents sur la carte (ou au moins clean les données qu'on a)
-- Préparer la présentation
