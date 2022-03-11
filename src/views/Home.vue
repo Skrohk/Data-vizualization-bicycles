@@ -51,7 +51,6 @@ export default class Home extends Vue {
 }
 </script>
 <style scoped>
-/* zen-kurenaido-regular - latin */
 @font-face {
   font-family: 'Zen Kurenaido';
   font-style: normal;

@@ -76,23 +76,20 @@ const barChart = (
   svg.append('g').call(xAxis);
   svg.append('g').call(yAxis);
 
-  svg
-    .append('text')
+  svg.append('text')
     .attr('text-anchor', 'middle')
     .attr('y', xPadding / 3)
     .attr('x', -height / 2)
     .attr('transform', 'rotate(-90)')
     .text(yLabel);
 
-  svg
-    .append('text')
+  svg.append('text')
     .attr('text-anchor', 'middle')
     .attr('x', width / 2)
     .attr('y', height - yPadding / 3)
     .text(xLabel);
 
-  svg
-    .append('text')
+  svg.append('text')
     .attr('text-anchor', 'middle')
     .attr('x', width / 2)
     .attr('y', yPadding / 2)

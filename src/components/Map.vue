@@ -12,6 +12,12 @@
     style="z-index: 5000; width: 180px"
   >
     <div class="legend-item">
+      <div class="marker districts" />
+      <p class="label">Arrondissements</p>
+      <input type="checkbox" class="ml-1" v-model="areDistrictsDisplayed" />
+    </div>
+
+    <div class="legend-item">
       <div class="marker counters" />
       <p class="label">Compteur</p>
       <input type="checkbox" class="ml-1" v-model="areCountersDisplayed" />
@@ -24,9 +30,9 @@
     </div>
 
     <div class="legend-item">
-      <div class="marker districts" />
-      <p class="label">Arrondissements</p>
-      <input type="checkbox" class="ml-1" v-model="areDistrictsDisplayed" />
+      <div class="marker parking" />
+      <p class="label">Parking manquant</p>
+      <input type="checkbox" class="ml-1" v-model="areParkingSlotsDisplayed" />
     </div>
 
     <div class="legend-item">
@@ -59,6 +65,7 @@ import dataDangerousPoints from '../../public/data/75056-points.json';
 import dataSegments from '../../public/data/75056-troncons-filtered.json';
 import dataDistricts from '../../public/data/arrondissements.json';
 import districtScores from '../../public/data/districtScores.json';
+import dataParkingSlots from '../../public/data/75056-parkings.json';
 
 @Options({
   emits: ['STATION_SELECTED', 'DISTRICT_SELECTED'],
@@ -85,6 +92,8 @@ export default class Map extends Vue {
   areSegmentDisplayed = false;
 
   areDistrictsDisplayed = true;
+
+  areParkingSlotsDisplayed = false;
 
   map = undefined;
 
@@ -243,6 +252,7 @@ export default class Map extends Vue {
 
     this.displayStations(mouseover, mouseleave);
     this.displayCounters(mouseover, mouseleave, mouseclick);
+    this.displayParkingSlots();
     this.displayConflictPoints();
     this.displaySegments(mouseover, mouseleave);
     this.displayDistricts();
@@ -285,7 +295,7 @@ export default class Map extends Vue {
         .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
         .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y)
         .attr('r', 4)
-        .style('fill', '#e76f51')
+        .style('fill', '#9d972a')
         .on('mouseover', (e, d) => mouseover(e, d, true))
         .on('mouseleave', mouseleave)
         .on('click', mouseclick)
@@ -319,6 +329,30 @@ export default class Map extends Vue {
         .style('pointer-events', 'auto');
     } else {
       d3.selectAll('.station').remove();
+    }
+  }
+
+  displayParkingSlots() {
+    if (this.areParkingSlotsDisplayed) {
+      const parkingSlots = dataParkingSlots.features.map((localisation) => ({
+        long: localisation.geometry.coordinates[0],
+        lat: localisation.geometry.coordinates[1],
+      }));
+      console.log(parkingSlots);
+
+      d3.select('#map-id')
+        .select('svg')
+        .selectAll('.parking-slots')
+        .data(parkingSlots)
+        .join('circle')
+        .attr('class', 'parking-slots')
+        .attr('cx', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).x)
+        .attr('cy', (d) => this.map.latLngToLayerPoint([d.lat, d.long]).y)
+        .attr('r', 3)
+        .style('fill', '#2a3d9d')
+        .style('pointer-events', 'auto');
+    } else {
+      d3.selectAll('.parking-slots').remove();
     }
   }
 
@@ -385,7 +419,7 @@ export default class Map extends Vue {
 }
 
 .counters {
-  background-color: #e76f51;
+  background-color: #9d972a;
 }
 
 .stations {
@@ -395,6 +429,10 @@ export default class Map extends Vue {
 .segments {
   color: forestgreen;
   font-size: 19pt;
+}
+
+.parking {
+  background-color: #2a3d9d;
 }
 
 .legend-item {

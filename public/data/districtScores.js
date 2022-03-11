@@ -199,7 +199,7 @@ for (let i = 1; i <= 20; i++) {
 
 for (let i = 1; i <= 20; i++) {
   const district = districts[i];
-  const surface = district.surface;
+  const { surface } = district;
 
   const velibScore = district.velibStations / surface;
   const bicycleLanesScore = district.bicycleLanesLengthInKm / surface;
@@ -217,10 +217,10 @@ for (let i = 1; i <= 20; i++) {
     segmentsToImproveScore: normalizedSegmentsToImproveScore,
     bicycleAccidentsScore: normalizedBicycleAccidentsScore,
     score:
-      normalizedVelibScore +
-      normalizedBicycleLanesScore +
-      normalizedSegmentsToImproveScore +
-      normalizedBicycleAccidentsScore,
+      normalizedVelibScore
+      + normalizedBicycleLanesScore
+      + normalizedSegmentsToImproveScore
+      + normalizedBicycleAccidentsScore,
   };
 }
 

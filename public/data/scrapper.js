@@ -2,6 +2,7 @@ const fs = require('fs');
 const axios = require('axios');
 const { format } = require('date-fns');
 
+// This function parse the raw data from the API and reduce the size of each file
 const parseData = async (listStation) => {
   let i = 0;
   console.log('===Parse data===');
@@ -34,24 +35,23 @@ const parseData = async (listStation) => {
   }
 };
 
+// Return a list with the id of each station
 const listEveryStation = () => {
   const data = JSON.parse(fs.readFileSync('./comptage-velo-compteurs.json', 'utf8'));
-
   return data.map((station) => station.fields.id_compteur);
 };
 
-const sleep = (ms) => new Promise((resolve) => {
-  setTimeout(resolve, ms);
-});
-
+// This function query a timeserie for each counter and write it as a json
 const fetchAPI = async (listStation) => {
   let i = 0;
+  const sleep = (ms) => new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
   console.log('===Fetch API===');
   for (const station of listStation) {
     // Can be improved by making simultaneous call (Promise.all)
     try {
       const res = await axios.get(`http://opendata.paris.fr/api/records/1.0/search/?dataset=comptage-velo-donnees-compteurs&q=&rows=10000&refine.id_compteur=${station}`);
-
       await sleep(10000); // Limit charge on API
 
       fs.writeFileSync(`./${station}.json`, JSON.stringify(res.data), 'utf8');
@@ -63,6 +63,7 @@ const fetchAPI = async (listStation) => {
   }
 };
 
+// This function filter segments depending on the number of contributions to this segments
 const filterSegments = async (filter) => {
   const data = JSON.parse(fs.readFileSync('./75056-troncons.json', 'utf8'));
   console.log('Nombre de troncons avant filtrage : ', data.features.length);
@@ -77,8 +78,9 @@ const filterSegments = async (filter) => {
   fs.writeFileSync('./75056-troncons-filtered.json', JSON.stringify(data), 'utf8');
 };
 
-// const stationList = listEveryStation();
-// fetchAPI(stationList).then(() => parseData(stationList));
-// parseData(stationList);
-
-filterSegments(2);
+if (require.main === module) {
+  // const stationList = listEveryStation();
+  // fetchAPI(stationList).then(() => parseData(stationList));
+  // parseData(stationList);
+  filterSegments(2);
+}

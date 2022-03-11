@@ -132,7 +132,6 @@ export default class Sidebar extends Vue {
 
   getPieChartData() {
     const district = districtScores[this.districtId as 1];
-    console.log();
     return {
       score: district.score.toFixed(0),
       detail: [

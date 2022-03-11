@@ -6,7 +6,7 @@ const getBicyleLaneLengthByDistrict = () => {
   const data = JSON.parse(rawdata);
 
   const sumByDisctrict = {};
-  for (let lane of data) {
+  for (const lane of data) {
     if (!lane.fields.arrdt) {
       continue;
     }
@@ -27,7 +27,7 @@ const getAccidentsByDistrict = () => {
   fs.createReadStream('accidents-velos.csv')
     .pipe(csv())
     .on('data', (row) => {
-      const commune = parseInt(row.commune);
+      const commune = parseInt(row.commune, 10);
       const date = new Date(row.date);
       if (commune >= 75000 && commune <= 75020 && date >= minDate) {
         data.push(row);
